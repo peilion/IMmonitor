@@ -1,0 +1,5 @@
+Django==2.0.2
+django-cors-headers==2.4.0
+DjangoUeditor==1.8.143
+mysqlclient==1.4.2
+pytz==2018.9
