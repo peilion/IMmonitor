@@ -1,0 +1,6 @@
+.DS_Store
+Vue-admin/node_modules/
+.idea/
+MxShop/Front/node_modules/
+
+package-lock.json
