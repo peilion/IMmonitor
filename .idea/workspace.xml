@@ -1,7 +1,329 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="eaebc6e5-fb0c-400f-ad63-6e666b5b88cb" name="Default" comment="" />
+    <list default="true" id="eaebc6e5-fb0c-400f-ad63-6e666b5b88cb" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/IMmonitor.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/IMmonitor.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IMmonitor/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/IMmonitor/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IMmonitor/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/IMmonitor/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/.babelrc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/.editorconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/.eslintignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/.eslintrc.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/.postcssrc.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/.travis.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/README.zh-CN.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/build/build.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/build/check-versions.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/build/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/build/utils.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/build/vue-loader.conf.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/build/webpack.base.conf.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/build/webpack.dev.conf.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/build/webpack.prod.conf.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/config/dev.env.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/config/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/config/prod.env.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/config/sit.env.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/App.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/api/article.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/api/login.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/api/qiniu.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/api/remoteSearch.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/api/transaction.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/assets/401_images/401.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/assets/404_images/404.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/assets/404_images/404_cloud.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/assets/custom-theme/fonts/element-icons.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/assets/custom-theme/fonts/element-icons.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/assets/custom-theme/index.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/components/BackToTop/index.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/components/Breadcrumb/index.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/components/Charts/keyboard.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/components/Charts/lineMarker.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/components/Charts/mixChart.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/components/Charts/mixins/resize.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/components/DndList/index.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/components/DragSelect/index.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/components/Dropzone/index.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/components/ErrorLog/index.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/components/GithubCorner/index.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/components/Hamburger/index.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/components/ImageCropper/index.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/components/ImageCropper/utils/data2blob.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/components/ImageCropper/utils/effectRipple.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/components/ImageCropper/utils/language.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/components/ImageCropper/utils/mimes.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/components/JsonEditor/index.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/components/Kanban/index.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/components/LangSelect/index.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/components/MDinput/index.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/components/MarkdownEditor/defaultOptions.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/components/MarkdownEditor/index.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/components/Pagination/index.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/components/PanThumb/index.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/components/Screenfull/index.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/components/ScrollPane/index.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/components/Share/dropdownMenu.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/components/SizeSelect/index.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/components/Sticky/index.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/components/SvgIcon/index.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/components/TextHoverEffect/Mallki.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/components/ThemePicker/index.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/components/Tinymce/components/editorImage.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/components/Tinymce/index.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/components/Tinymce/plugins.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/components/Tinymce/toolbar.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/components/TreeTable/eval.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/components/TreeTable/index.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/components/TreeTable/readme.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/components/Upload/singleImage.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/components/Upload/singleImage2.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/components/Upload/singleImage3.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/components/UploadExcel/index.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/directive/clipboard/clipboard.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/directive/clipboard/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/directive/el-dragDialog/drag.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/directive/el-dragDialog/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/directive/permission/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/directive/permission/permission.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/directive/sticky.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/directive/waves/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/directive/waves/waves.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/directive/waves/waves.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/errorLog.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/filters/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/icons/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/icons/svg/404.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/icons/svg/bug.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/icons/svg/chart.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/icons/svg/clipboard.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/icons/svg/component.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/icons/svg/dashboard.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/icons/svg/documentation.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/icons/svg/drag.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/icons/svg/edit.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/icons/svg/email.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/icons/svg/example.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/icons/svg/excel.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/icons/svg/eye.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/icons/svg/form.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/icons/svg/guide 2.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/icons/svg/guide.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/icons/svg/icon.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/icons/svg/international.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/icons/svg/language.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/icons/svg/link.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/icons/svg/list.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/icons/svg/lock.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/icons/svg/message.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/icons/svg/money.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/icons/svg/nested.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/icons/svg/password.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/icons/svg/pdf.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/icons/svg/people.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/icons/svg/peoples.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/icons/svg/qq.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/icons/svg/shopping.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/icons/svg/size.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/icons/svg/star.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/icons/svg/tab.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/icons/svg/table.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/icons/svg/theme.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/icons/svg/tree.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/icons/svg/user.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/icons/svg/wechat.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/icons/svg/zip.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/icons/svgo.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/lang/en.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/lang/es.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/lang/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/lang/zh.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/main.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/mock/article.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/mock/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/mock/login.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/mock/remoteSearch.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/mock/transaction.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/permission.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/router/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/router/modules/charts.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/router/modules/components.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/router/modules/nested.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/router/modules/table.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/store/getters.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/store/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/store/modules/app.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/store/modules/errorLog.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/store/modules/permission.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/store/modules/tagsView.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/store/modules/user.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/styles/btn.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/styles/element-ui.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/styles/index.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/styles/mixin.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/styles/sidebar.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/styles/transition.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/styles/variables.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/utils/auth.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/utils/clipboard.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/utils/createUniqueString.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/utils/i18n.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/utils/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/utils/openWindow.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/utils/permission.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/utils/request.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/utils/scrollTo.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/utils/validate.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/vendor/Export2Excel.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/vendor/Export2Zip.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/views/charts/keyboard.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/views/charts/line.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/views/charts/mixChart.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/views/clipboard/index.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/views/components-demo/avatarUpload.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/views/components-demo/backToTop.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/views/components-demo/countTo.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/views/components-demo/dndList.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/views/components-demo/dragDialog.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/views/components-demo/dragKanban.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/views/components-demo/dragSelect.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/views/components-demo/dropzone.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/views/components-demo/jsonEditor.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/views/components-demo/markdown.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/views/components-demo/mixin.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/views/components-demo/splitpane.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/views/components-demo/sticky.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/views/components-demo/tinymce.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/views/dashboard/admin/components/BarChart.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/views/dashboard/admin/components/BoxCard.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/views/dashboard/admin/components/LineChart.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/views/dashboard/admin/components/PanelGroup.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/views/dashboard/admin/components/PieChart.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/views/dashboard/admin/components/RaddarChart.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/views/dashboard/admin/components/TodoList/Todo.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/views/dashboard/admin/components/TodoList/index.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/views/dashboard/admin/components/TodoList/index.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/views/dashboard/admin/components/TransactionTable.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/views/dashboard/admin/index.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/views/dashboard/editor/index.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/views/dashboard/index.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/views/documentation/index.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/views/errorLog/errorTestA.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/views/errorLog/errorTestB.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/views/errorLog/index.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/views/errorPage/401.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/views/errorPage/404.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/views/example/components/ArticleDetail.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/views/example/components/Dropdown/Comment.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/views/example/components/Dropdown/Platform.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/views/example/components/Dropdown/SourceUrl.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/views/example/components/Dropdown/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/views/example/components/Warning.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/views/example/create.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/views/example/edit.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/views/example/list.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/views/excel/components/AutoWidthOption.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/views/excel/components/BookTypeOption.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/views/excel/components/FilenameOption.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/views/excel/exportExcel.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/views/excel/selectExcel.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/views/excel/uploadExcel.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/views/guide/defineSteps.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/views/guide/index.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/views/i18n-demo/index.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/views/i18n-demo/local.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/views/layout/Layout.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/views/layout/components/AppMain.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/views/layout/components/Navbar.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/views/layout/components/Sidebar/FixiOSBug.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/views/layout/components/Sidebar/Item.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/views/layout/components/Sidebar/Link.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/views/layout/components/Sidebar/SidebarItem.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/views/layout/components/Sidebar/index.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/views/layout/components/TagsView.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/views/layout/components/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/views/layout/mixin/ResizeHandler.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/views/login/authredirect.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/views/login/index.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/views/login/socialsignin.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/views/nested/menu1/index.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/views/nested/menu1/menu1-1/index.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/views/nested/menu1/menu1-2/index.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/views/nested/menu1/menu1-2/menu1-2-1/index.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/views/nested/menu1/menu1-2/menu1-2-2/index.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/views/nested/menu1/menu1-3/index.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/views/nested/menu2/index.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/views/pdf/content.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/views/pdf/download.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/views/pdf/index.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/views/permission/components/SwitchRoles.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/views/permission/directive.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/views/permission/page.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/views/qiniu/upload.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/views/redirect/index.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/views/svg-icons/index.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/views/svg-icons/requireIcons.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/views/tab/components/tabPane.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/views/tab/index.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/views/table/complexTable.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/views/table/dragTable.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/views/table/dynamicTable/fixedThead.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/views/table/dynamicTable/index.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/views/table/dynamicTable/unfixedThead.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/views/table/inlineEditTable.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/views/table/treeTable/customEval.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/views/table/treeTable/customTreeTable.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/views/table/treeTable/treeTable.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/views/theme/index.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/src/views/zip/index.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/static/tinymce4.7.5/langs/zh_CN.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/static/tinymce4.7.5/plugins/codesample/css/prism.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/static/tinymce4.7.5/plugins/emoticons/img/smiley-cool.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/static/tinymce4.7.5/plugins/emoticons/img/smiley-cry.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/static/tinymce4.7.5/plugins/emoticons/img/smiley-embarassed.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/static/tinymce4.7.5/plugins/emoticons/img/smiley-foot-in-mouth.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/static/tinymce4.7.5/plugins/emoticons/img/smiley-frown.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/static/tinymce4.7.5/plugins/emoticons/img/smiley-innocent.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/static/tinymce4.7.5/plugins/emoticons/img/smiley-kiss.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/static/tinymce4.7.5/plugins/emoticons/img/smiley-laughing.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/static/tinymce4.7.5/plugins/emoticons/img/smiley-money-mouth.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/static/tinymce4.7.5/plugins/emoticons/img/smiley-sealed.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/static/tinymce4.7.5/plugins/emoticons/img/smiley-smile.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/static/tinymce4.7.5/plugins/emoticons/img/smiley-surprised.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/static/tinymce4.7.5/plugins/emoticons/img/smiley-tongue-out.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/static/tinymce4.7.5/plugins/emoticons/img/smiley-undecided.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/static/tinymce4.7.5/plugins/emoticons/img/smiley-wink.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/static/tinymce4.7.5/plugins/emoticons/img/smiley-yell.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/static/tinymce4.7.5/plugins/visualblocks/css/visualblocks.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/static/tinymce4.7.5/skins/lightgray/content.inline.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/static/tinymce4.7.5/skins/lightgray/content.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/static/tinymce4.7.5/skins/lightgray/fonts/tinymce-mobile.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/static/tinymce4.7.5/skins/lightgray/fonts/tinymce-small.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/static/tinymce4.7.5/skins/lightgray/fonts/tinymce-small.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/static/tinymce4.7.5/skins/lightgray/fonts/tinymce-small.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/static/tinymce4.7.5/skins/lightgray/fonts/tinymce-small.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/static/tinymce4.7.5/skins/lightgray/fonts/tinymce.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/static/tinymce4.7.5/skins/lightgray/fonts/tinymce.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/static/tinymce4.7.5/skins/lightgray/fonts/tinymce.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/static/tinymce4.7.5/skins/lightgray/fonts/tinymce.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/static/tinymce4.7.5/skins/lightgray/img/anchor.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/static/tinymce4.7.5/skins/lightgray/img/loader.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/static/tinymce4.7.5/skins/lightgray/img/object.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/static/tinymce4.7.5/skins/lightgray/img/trans.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/static/tinymce4.7.5/skins/lightgray/skin.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/static/tinymce4.7.5/skins/lightgray/skin.min.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue-admin/static/tinymce4.7.5/tinymce.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/motors/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/motors/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/motors/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/motors/apps.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/motors/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/motors/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -9,13 +331,30 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
+  </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="settings.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/IMmonitor/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="399">
-              <caret line="41" selection-start-line="41" selection-end-line="41" />
+            <state relative-caret-position="243">
+              <caret line="130" column="15" selection-start-line="130" selection-start-column="15" selection-end-line="130" selection-end-column="15" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="select2.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/static/xadmin/vendor/select2/select2.js">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file leaf-file-name="ueditor.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/extra_apps/xadmin/plugins/ueditor.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="57">
+              <caret line="3" column="51" selection-start-line="3" selection-start-column="51" selection-end-line="3" selection-end-column="51" />
             </state>
           </provider>
         </entry>
@@ -23,8 +362,8 @@
       <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/IMmonitor/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
-              <caret line="20" column="52" selection-start-line="20" selection-start-column="52" selection-end-line="20" selection-end-column="52" />
+            <state relative-caret-position="361">
+              <caret line="21" selection-start-line="21" selection-end-line="21" />
               <folding>
                 <element signature="e#633#665#0" expanded="true" />
               </folding>
@@ -32,22 +371,131 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="models.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/motors/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="57">
-              <caret line="3" selection-start-line="3" selection-end-line="3" />
+            <state relative-caret-position="456">
+              <caret line="33" selection-start-line="33" selection-end-line="33" />
+              <folding>
+                <element signature="e#152#192#1" />
+                <element signature="e#222#330#0" />
+                <element signature="e#1328#1343#0" />
+                <element signature="e#1370#2172#0" />
+                <element signature="e#2201#3209#0" />
+                <element signature="e#3236#3870#0" />
+                <element signature="e#3898#4534#0" />
+                <element signature="e#4575#4857#0" />
+                <element signature="e#4841#4857#0" />
+                <element signature="e#4889#5091#0" />
+                <element signature="e#5075#5091#0" />
+                <element signature="e#5137#5340#0" />
+                <element signature="e#5374#5709#0" />
+                <element signature="e#5694#5709#0" />
+                <element signature="e#5737#5741#0" />
+                <element signature="e#5769#5773#0" />
+                <element signature="e#5801#5805#0" />
+                <element signature="e#5841#6554#0" />
+                <element signature="e#6539#6554#0" />
+                <element signature="e#6586#6590#0" />
+                <element signature="e#6622#6626#0" />
+                <element signature="e#6658#6662#0" />
+                <element signature="e#6703#7413#0" />
+                <element signature="e#7454#7806#0" />
+                <element signature="e#7791#7806#0" />
+                <element signature="e#7845#7849#0" />
+                <element signature="e#7888#7892#0" />
+                <element signature="e#7931#7935#0" />
+                <element signature="e#7974#8481#0" />
+                <element signature="e#8002#8043#0" />
+                <element signature="e#8522#8771#0" />
+                <element signature="e#8813#9064#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="adminx.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/motors/adminx.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="190">
+              <caret line="12" selection-start-line="12" selection-end-line="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="apps.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/motors/apps.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="95">
+              <caret line="5" column="25" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="base.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/extra_apps/xadmin/templates/xadmin/base.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="19">
+              <caret line="1" column="40" selection-start-line="1" selection-start-column="40" selection-end-line="1" selection-end-column="40" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="base_site.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/extra_apps/xadmin/templates/xadmin/base_site.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2033">
+              <caret line="107" column="55" selection-start-line="107" selection-start-column="55" selection-end-line="107" selection-end-column="55" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="__init__.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/motors/__init__.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="38">
+              <caret line="2" selection-start-line="2" selection-end-line="2" />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>select2_locale_en-us.js</find>
+      <find>en-us</find>
+    </findStrings>
+    <dirStrings>
+      <dir>C:\Users\fpl11\Desktop\IMmonitor\extra_apps</dir>
+    </dirStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/IMmonitor/settings.py" />
+        <option value="$PROJECT_DIR$/motors/models.py" />
+        <option value="F:/Pyenv/IMmonitor/Lib/site-packages/xadmin/util.py" />
+        <option value="F:/Pyenv/IMmonitor/Lib/site-packages/xadmin/models.py" />
+        <option value="F:/Pyenv/IMmonitor/Lib/site-packages/xadmin/views/base.py" />
+        <option value="F:/Pyenv/IMmonitor/Lib/site-packages/xadmin/views/list.py" />
+        <option value="F:/Pyenv/IMmonitor/Lib/site-packages/xadmin/views/dashboard.py" />
+        <option value="$PROJECT_DIR$/requirements.txt" />
         <option value="$PROJECT_DIR$/IMmonitor/urls.py" />
+        <option value="$PROJECT_DIR$/motors/__init__.py" />
+        <option value="$PROJECT_DIR$/motors/adminx.py" />
+        <option value="$PROJECT_DIR$/motors/apps.py" />
+        <option value="$PROJECT_DIR$/extra_apps/xadmin/templates/xadmin/base.html" />
+        <option value="$PROJECT_DIR$/IMmonitor/settings.py" />
       </list>
     </option>
   </component>
@@ -60,11 +508,11 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
-    <option name="x" value="238" />
-    <option name="y" value="86" />
-    <option name="width" value="1457" />
-    <option name="height" value="857" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="726" />
+    <option name="y" value="85" />
+    <option name="width" value="1304" />
+    <option name="height" value="890" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -81,12 +529,11 @@
             <path>
               <item name="IMmonitor" type="b2602c69:ProjectViewProjectNode" />
               <item name="IMmonitor" type="462c0819:PsiDirectoryNode" />
-              <item name="IMmonitor" type="462c0819:PsiDirectoryNode" />
+              <item name="extra_apps" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="IMmonitor" type="b2602c69:ProjectViewProjectNode" />
-              <item name="IMmonitor" type="462c0819:PsiDirectoryNode" />
-              <item name="motors" type="462c0819:PsiDirectoryNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
           </expand>
           <select />
@@ -101,6 +548,13 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\fpl11\Desktop\IMmonitor\static\xadmin\vendor" />
+      <recent name="C:\Users\fpl11\Desktop\IMmonitor\static" />
+      <recent name="C:\Users\fpl11\Desktop\IMmonitor\extra_apps" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -152,30 +606,29 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="238" y="86" width="1457" height="857" extended-state="1" />
-    <editor active="true" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
-      <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50067025" side_tool="true" weight="0.32952926" />
+      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Version Control" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Python Console" />
-      <window_info anchor="bottom" id="Terminal" visible="true" weight="0.32962447" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.3357194" />
-      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
-      <window_info anchor="right" id="Database" />
-      <window_info anchor="right" id="SciView" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Python Console" order="7" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" sideWeight="0.49932975" visible="true" weight="0.26248217" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15951742" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="right" id="Database" order="3" />
+      <window_info anchor="right" id="SciView" order="3" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info id="Favorites" side_tool="true" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -184,20 +637,299 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="2" />
+    </breakpoint-manager>
+  </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/IMmonitor/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
+        <state relative-caret-position="2470">
+          <caret line="130" column="15" lean-forward="true" selection-start-line="130" selection-start-column="15" selection-end-line="130" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/xadmin/vendor/select2/select2.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/extra_apps/xadmin/plugins/ueditor.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="3" column="51" selection-start-line="3" selection-start-column="51" selection-end-line="3" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/IMmonitor/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
+          <folding>
+            <element signature="e#633#665#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/motors/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
+          <folding>
+            <element signature="e#152#192#1" />
+            <element signature="e#222#330#0" />
+            <element signature="e#1328#1343#0" />
+            <element signature="e#1370#2172#0" />
+            <element signature="e#2201#3209#0" />
+            <element signature="e#3236#3870#0" />
+            <element signature="e#3898#4534#0" />
+            <element signature="e#4575#4857#0" />
+            <element signature="e#4841#4857#0" />
+            <element signature="e#4889#5091#0" />
+            <element signature="e#5075#5091#0" />
+            <element signature="e#5137#5340#0" />
+            <element signature="e#5374#5709#0" />
+            <element signature="e#5694#5709#0" />
+            <element signature="e#5737#5741#0" />
+            <element signature="e#5769#5773#0" />
+            <element signature="e#5801#5805#0" />
+            <element signature="e#5841#6554#0" />
+            <element signature="e#6539#6554#0" />
+            <element signature="e#6586#6590#0" />
+            <element signature="e#6622#6626#0" />
+            <element signature="e#6658#6662#0" />
+            <element signature="e#6703#7413#0" />
+            <element signature="e#7454#7806#0" />
+            <element signature="e#7791#7806#0" />
+            <element signature="e#7845#7849#0" />
+            <element signature="e#7888#7892#0" />
+            <element signature="e#7931#7935#0" />
+            <element signature="e#7974#8481#0" />
+            <element signature="e#8002#8043#0" />
+            <element signature="e#8522#8771#0" />
+            <element signature="e#8813#9064#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/motors/adminx.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/motors/apps.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="5" column="25" lean-forward="true" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/extra_apps/xadmin/templates/xadmin/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="1" column="40" selection-start-line="1" selection-start-column="40" selection-end-line="1" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/extra_apps/xadmin/templates/xadmin/base_site.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2033">
+          <caret line="107" column="55" selection-start-line="107" selection-start-column="55" selection-end-line="107" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/motors/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/IMmonitor/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="950">
+          <caret line="50" column="16" lean-forward="true" selection-start-line="50" selection-start-column="16" selection-end-line="50" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/extra_apps/xadmin/plugins/ueditor.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/motors/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+          <folding>
+            <element signature="e#152#192#1" />
+            <element signature="e#222#330#0" />
+            <element signature="e#1328#1343#0" />
+            <element signature="e#1370#2172#0" />
+            <element signature="e#2201#3209#0" />
+            <element signature="e#3236#3870#0" />
+            <element signature="e#3898#4534#0" />
+            <element signature="e#4575#4857#0" />
+            <element signature="e#4841#4857#0" />
+            <element signature="e#4889#5091#0" />
+            <element signature="e#5075#5091#0" />
+            <element signature="e#5137#5340#0" />
+            <element signature="e#5374#5709#0" />
+            <element signature="e#5694#5709#0" />
+            <element signature="e#5737#5741#0" />
+            <element signature="e#5769#5773#0" />
+            <element signature="e#5801#5805#0" />
+            <element signature="e#5841#6554#0" />
+            <element signature="e#6539#6554#0" />
+            <element signature="e#6586#6590#0" />
+            <element signature="e#6622#6626#0" />
+            <element signature="e#6658#6662#0" />
+            <element signature="e#6703#7413#0" />
+            <element signature="e#7454#7806#0" />
+            <element signature="e#7791#7806#0" />
+            <element signature="e#7845#7849#0" />
+            <element signature="e#7888#7892#0" />
+            <element signature="e#7931#7935#0" />
+            <element signature="e#7974#8481#0" />
+            <element signature="e#8002#8043#0" />
+            <element signature="e#8522#8771#0" />
+            <element signature="e#8813#9064#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SymComponents Demo/gsy.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1805">
+          <caret line="99" column="10" selection-start-line="99" selection-start-column="10" selection-end-line="99" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/IMmonitor/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
+          <folding>
+            <element signature="e#633#665#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/IMmonitor/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2793">
+          <caret line="147" selection-start-line="147" selection-end-line="147" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/IMmonitor/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="20" column="52" selection-start-line="20" selection-start-column="52" selection-end-line="20" selection-end-column="52" />
+          <folding>
+            <element signature="e#633#665#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/motors/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1805">
+          <caret line="97" lean-forward="true" selection-start-line="97" selection-end-line="97" />
+          <folding>
+            <element signature="e#152#192#1" />
+            <element signature="e#222#330#0" />
+            <element signature="e#1328#1343#0" />
+            <element signature="e#1370#2172#0" />
+            <element signature="e#2201#3209#0" />
+            <element signature="e#3236#3870#0" />
+            <element signature="e#3898#4534#0" />
+            <element signature="e#4575#4857#0" />
+            <element signature="e#4841#4857#0" />
+            <element signature="e#4889#5091#0" />
+            <element signature="e#5075#5091#0" />
+            <element signature="e#5137#5340#0" />
+            <element signature="e#5374#5709#0" />
+            <element signature="e#5694#5709#0" />
+            <element signature="e#5737#5741#0" />
+            <element signature="e#5769#5773#0" />
+            <element signature="e#5801#5805#0" />
+            <element signature="e#5841#6554#0" />
+            <element signature="e#6539#6554#0" />
+            <element signature="e#6586#6590#0" />
+            <element signature="e#6622#6626#0" />
+            <element signature="e#6658#6662#0" />
+            <element signature="e#6703#7413#0" />
+            <element signature="e#7454#7806#0" />
+            <element signature="e#7791#7806#0" />
+            <element signature="e#7845#7849#0" />
+            <element signature="e#7888#7892#0" />
+            <element signature="e#7931#7935#0" />
+            <element signature="e#7974#8481#0" />
+            <element signature="e#8002#8043#0" />
+            <element signature="e#8522#8771#0" />
+            <element signature="e#8813#9064#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/IMmonitor/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="779">
           <caret line="41" selection-start-line="41" selection-end-line="41" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/IMmonitor/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
+        <state relative-caret-position="361">
           <caret line="20" column="52" selection-start-line="20" selection-start-column="52" selection-end-line="20" selection-end-column="52" />
           <folding>
             <element signature="e#633#665#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/motors/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+          <folding>
+            <element signature="e#152#192#1" />
+            <element signature="e#222#330#0" />
+            <element signature="e#1328#1343#0" />
+            <element signature="e#1370#2172#0" />
+            <element signature="e#2201#3209#0" />
+            <element signature="e#3236#3870#0" />
+            <element signature="e#3898#4534#0" />
+            <element signature="e#4575#4857#0" />
+            <element signature="e#4841#4857#0" />
+            <element signature="e#4889#5091#0" />
+            <element signature="e#5075#5091#0" />
+            <element signature="e#5137#5340#0" />
+            <element signature="e#5374#5709#0" />
+            <element signature="e#5694#5709#0" />
+            <element signature="e#5737#5741#0" />
+            <element signature="e#5769#5773#0" />
+            <element signature="e#5801#5805#0" />
+            <element signature="e#5841#6554#0" />
+            <element signature="e#6539#6554#0" />
+            <element signature="e#6586#6590#0" />
+            <element signature="e#6622#6626#0" />
+            <element signature="e#6658#6662#0" />
+            <element signature="e#6703#7413#0" />
+            <element signature="e#7454#7806#0" />
+            <element signature="e#7791#7806#0" />
+            <element signature="e#7845#7849#0" />
+            <element signature="e#7888#7892#0" />
+            <element signature="e#7931#7935#0" />
+            <element signature="e#7974#8481#0" />
+            <element signature="e#8002#8043#0" />
+            <element signature="e#8522#8771#0" />
+            <element signature="e#8813#9064#0" />
           </folding>
         </state>
       </provider>
@@ -209,10 +941,158 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/motors/models.py">
+    <entry file="file://$PROJECT_DIR$/Harmonics.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SymComponents Demo/sin_fit.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="262">
+          <caret line="49" column="20" selection-start-line="49" selection-start-column="20" selection-end-line="49" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SymComponents Demo/gsyTransforms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-11704" />
+      </provider>
+    </entry>
+    <entry file="file://F:/Pyenv/IMmonitor/Lib/site-packages/django/db/models/base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3304">
+          <caret line="538" selection-start-line="538" selection-end-line="538" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://F:/Pyenv/IMmonitor/Lib/site-packages/DjangoUeditor/models.py" />
+    <entry file="file://F:/Pyenv/IMmonitor/Lib/site-packages/xadmin/util.py" />
+    <entry file="file://F:/Pyenv/IMmonitor/Lib/site-packages/xadmin/views/dashboard.py" />
+    <entry file="file://F:/Pyenv/IMmonitor/Lib/site-packages/xadmin/views/list.py" />
+    <entry file="file://F:/Pyenv/IMmonitor/Lib/site-packages/xadmin/views/base.py" />
+    <entry file="file://F:/Pyenv/IMmonitor/Lib/site-packages/xadmin/models.py" />
+    <entry file="file://$PROJECT_DIR$/extra_apps/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/extra_apps/DjangoUeditor/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/extra_apps/DjangoUeditor/models.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/requirements.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SymComponents Demo/gsy.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="464">
+          <caret line="99" column="10" selection-start-line="99" selection-start-column="10" selection-end-line="99" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/motors/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/IMmonitor/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
+          <folding>
+            <element signature="e#633#665#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/extra_apps/xadmin/plugins/ueditor.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="57">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
+          <caret line="3" column="51" selection-start-line="3" selection-start-column="51" selection-end-line="3" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/select2/select2.js" />
+    <entry file="file://$PROJECT_DIR$/static/xadmin/vendor/select2/select2.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/motors/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="33" selection-start-line="33" selection-end-line="33" />
+          <folding>
+            <element signature="e#152#192#1" />
+            <element signature="e#222#330#0" />
+            <element signature="e#1328#1343#0" />
+            <element signature="e#1370#2172#0" />
+            <element signature="e#2201#3209#0" />
+            <element signature="e#3236#3870#0" />
+            <element signature="e#3898#4534#0" />
+            <element signature="e#4575#4857#0" />
+            <element signature="e#4841#4857#0" />
+            <element signature="e#4889#5091#0" />
+            <element signature="e#5075#5091#0" />
+            <element signature="e#5137#5340#0" />
+            <element signature="e#5374#5709#0" />
+            <element signature="e#5694#5709#0" />
+            <element signature="e#5737#5741#0" />
+            <element signature="e#5769#5773#0" />
+            <element signature="e#5801#5805#0" />
+            <element signature="e#5841#6554#0" />
+            <element signature="e#6539#6554#0" />
+            <element signature="e#6586#6590#0" />
+            <element signature="e#6622#6626#0" />
+            <element signature="e#6658#6662#0" />
+            <element signature="e#6703#7413#0" />
+            <element signature="e#7454#7806#0" />
+            <element signature="e#7791#7806#0" />
+            <element signature="e#7845#7849#0" />
+            <element signature="e#7888#7892#0" />
+            <element signature="e#7931#7935#0" />
+            <element signature="e#7974#8481#0" />
+            <element signature="e#8002#8043#0" />
+            <element signature="e#8522#8771#0" />
+            <element signature="e#8813#9064#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/motors/adminx.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/motors/apps.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="5" column="25" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/extra_apps/xadmin/templates/xadmin/base_site.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2033">
+          <caret line="107" column="55" selection-start-line="107" selection-start-column="55" selection-end-line="107" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/extra_apps/xadmin/templates/xadmin/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="1" column="40" selection-start-line="1" selection-start-column="40" selection-end-line="1" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/IMmonitor/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="130" column="15" selection-start-line="130" selection-start-column="15" selection-end-line="130" selection-end-column="15" />
         </state>
       </provider>
     </entry>

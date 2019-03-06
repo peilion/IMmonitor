@@ -13,7 +13,10 @@
     </facet>
   </component>
   <component name="NewModuleRootManager">
-    <content url="file://$MODULE_DIR$" />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/extra_apps" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/extra_apps/DjangoUeditor" isTestSource="false" />
+    </content>
     <orderEntry type="jdk" jdkName="Python 3.6 (IMmonitor)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
