@@ -42,7 +42,7 @@ def parameter_estimation(wave, sampling_rate):
     spec = np.fft.rfft(wave)
     freq = np.linspace(0, sampling_rate / 2, size / 2 + 1)
     spec = np.abs(spec)
-    p0 = [max(data), freq[np.argmax(spec)], 0.1]  # Initial guess for the parameters
+    p0 = [max(data), freq[np.argmax(spec)], np.pi * freq[np.argmax(spec)]]  # Initial guess for the parameters
     # p0 = [max(data), 50, 0.7]
     Tx = np.linspace(0, size / sampling_rate, size)
     p1, success = optimize.leastsq(errfunc, p0[:], args=(Tx, wave))
@@ -75,7 +75,7 @@ plt.plot(time, fitfunc(pA, time), "b-", time, fitfunc(pB, time), "r-", time, fit
 plt.show()
 
 # Construct complex signal from estimated signal.
-phaseAdata, time_samples = make_phase(pA[0],
+phaseAdata, time_samples = make_phase(pA[0] * 1.1,
                                       2 * np.pi * pA[1],
                                       pA[2])
 phaseBdata, _ = make_phase(pB[0],
@@ -101,5 +101,5 @@ plt.show()
 
 plt.plot(time_samples, phaseA_neg, "b-", time_samples, phaseB_neg, "r-", time_samples, phaseC_neg,
          "g-")  # Plot of the data and the fit
-plt.ylim([-1, 1])
+plt.ylim([-0.3, 0.3])
 plt.show()

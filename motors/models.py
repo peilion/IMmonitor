@@ -149,7 +149,7 @@ class Wfeature(Feature):
     pass
 
 
-class SymComponent(models.Model):
+class SymComponent(models.Model): #Only one phase syscomponents are calculated and stored
     signal_pack = models.OneToOneField(CurrentSignalPack, verbose_name='Parent pack', on_delete=models.CASCADE)
     nagative_sequence = models.TextField("Negative sequence waveform", blank=True, null=True)
     positive_sequence = models.TextField("Positive sequence waveform", blank=True, null=True)
