@@ -3,19 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="eaebc6e5-fb0c-400f-ad63-6e666b5b88cb" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SymComponents Demo/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SymComponents Demo/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SymComponents Demo/.idea/untitled.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SymComponents Demo/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SymComponents Demo/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SymComponents Demo/Health_50Hz_Load_0.mat" beforeDir="false" afterPath="$PROJECT_DIR$/SymComponents/Health_50Hz_Load_0.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SymComponents Demo/gmm.py" beforeDir="false" afterPath="$PROJECT_DIR$/SymComponents/gmm.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SymComponents Demo/gsy.py" beforeDir="false" afterPath="$PROJECT_DIR$/SymComponents/gsy.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SymComponents Demo/gsyTransforms.py" beforeDir="false" afterPath="$PROJECT_DIR$/SymComponents/gsyTransforms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SymComponents Demo/heights.txt" beforeDir="false" afterPath="$PROJECT_DIR$/SymComponents/heights.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SymComponents Demo/parametrix" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SymComponents Demo/parametrix.py" beforeDir="false" afterPath="$PROJECT_DIR$/SymComponents/parametrix.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SymComponents Demo/sin_fit.py" beforeDir="false" afterPath="$PROJECT_DIR$/SymComponents/sin_fit.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_tools/Memo.txt" beforeDir="false" afterPath="$PROJECT_DIR$/db_tools/Memo.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/motors/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/motors/apps.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/motors/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/motors/models.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -24,6 +13,9 @@
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/IMmonitor$insert_signal.coverage" NAME="insert_signal Coverage Results" MODIFIED="1552036822737" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/db_tools" />
   </component>
   <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
     <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
@@ -42,8 +34,8 @@
       <file leaf-file-name="gsy.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SymComponents/gsy.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="206">
-              <caret line="52" selection-start-line="52" selection-end-line="54" selection-end-column="30" />
+            <state relative-caret-position="423">
+              <caret line="103" column="13" selection-start-line="103" selection-end-line="104" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
                 <element signature="e#278#549#0" />
@@ -52,16 +44,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="select2.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/static/xadmin/vendor/select2/select2.js">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
       <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/motors/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="79">
-              <caret line="113" column="20" selection-start-line="113" selection-start-column="20" selection-end-line="113" selection-end-column="20" />
+            <state relative-caret-position="211">
+              <caret line="134" column="12" selection-start-line="134" selection-start-column="12" selection-end-line="134" selection-end-column="12" />
               <folding>
                 <element signature="e#152#192#1" />
                 <element signature="e#222#330#0" />
@@ -71,28 +58,29 @@
                 <element signature="e#3898#4534#0" />
                 <element signature="e#4575#4857#0" />
                 <element signature="e#4841#4857#0" />
-                <element signature="e#4889#5091#0" />
                 <element signature="e#5075#5091#0" />
-                <element signature="e#5374#5709#0" />
-                <element signature="e#5694#5709#0" />
-                <element signature="e#5737#5741#0" />
-                <element signature="e#5769#5773#0" />
-                <element signature="e#5801#5805#0" />
-                <element signature="e#5841#6554#0" />
-                <element signature="e#6539#6554#0" />
-                <element signature="e#6586#6590#0" />
-                <element signature="e#6622#6626#0" />
-                <element signature="e#6658#6662#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="insert_signal.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="cal_features.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/db_tools/cal_features.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="271">
+              <caret line="46" column="15" selection-start-line="46" selection-start-column="15" selection-end-line="46" selection-end-column="15" />
+              <folding>
+                <element signature="e#0#43#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="insert_signal.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/db_tools/insert_signal.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
+            <state relative-caret-position="361">
+              <caret line="19" column="31" lean-forward="true" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
               <folding>
                 <element signature="e#0#74#0" expanded="true" />
               </folding>
@@ -113,25 +101,7 @@
         <entry file="file://$PROJECT_DIR$/motors/apps.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="95">
-              <caret line="5" column="25" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="base.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/extra_apps/xadmin/templates/xadmin/base.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="19">
-              <caret line="1" column="40" selection-start-line="1" selection-start-column="40" selection-end-line="1" selection-end-column="40" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="base_site.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/extra_apps/xadmin/templates/xadmin/base_site.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2033">
-              <caret line="107" column="55" selection-start-line="107" selection-start-column="55" selection-end-line="107" selection-end-column="55" />
+              <caret line="5" column="36" selection-start-line="5" selection-start-column="36" selection-end-line="5" selection-end-column="36" />
             </state>
           </provider>
         </entry>
@@ -169,14 +139,15 @@
         <option value="$PROJECT_DIR$/IMmonitor/urls.py" />
         <option value="$PROJECT_DIR$/motors/__init__.py" />
         <option value="$PROJECT_DIR$/motors/adminx.py" />
-        <option value="$PROJECT_DIR$/motors/apps.py" />
         <option value="$PROJECT_DIR$/extra_apps/xadmin/templates/xadmin/base.html" />
         <option value="$PROJECT_DIR$/IMmonitor/settings.py" />
         <option value="$PROJECT_DIR$/SymComponents Demo/gsy.py" />
-        <option value="$PROJECT_DIR$/motors/models.py" />
         <option value="$PROJECT_DIR$/SymComponents/gsy.py" />
         <option value="$PROJECT_DIR$/db_tools/Description" />
         <option value="$PROJECT_DIR$/db_tools/insert_signal.py" />
+        <option value="$PROJECT_DIR$/motors/apps.py" />
+        <option value="$PROJECT_DIR$/motors/models.py" />
+        <option value="$PROJECT_DIR$/db_tools/cal_features.py" />
       </list>
     </option>
   </component>
@@ -189,11 +160,11 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="301" />
-    <option name="y" value="181" />
-    <option name="width" value="1384" />
-    <option name="height" value="743" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="300" />
+    <option name="y" value="180" />
+    <option name="width" value="1385" />
+    <option name="height" value="745" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -210,7 +181,12 @@
             <path>
               <item name="IMmonitor" type="b2602c69:ProjectViewProjectNode" />
               <item name="IMmonitor" type="462c0819:PsiDirectoryNode" />
-              <item name="extra_apps" type="462c0819:PsiDirectoryNode" />
+              <item name="db_tools" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="IMmonitor" type="b2602c69:ProjectViewProjectNode" />
+              <item name="IMmonitor" type="462c0819:PsiDirectoryNode" />
+              <item name="SymComponents" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="IMmonitor" type="b2602c69:ProjectViewProjectNode" />
@@ -250,7 +226,26 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.insert_signal">
+    <configuration name="insert_signal" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="IMmonitor" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/db_tools" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/db_tools/insert_signal.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
     <configuration name="IMmonitor" type="Python.DjangoServer" factoryName="Django server">
       <module name="IMmonitor" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -274,6 +269,15 @@
       <option name="useCustomRunCommand" value="false" />
       <option name="customRunCommand" value="" />
     </configuration>
+    <list>
+      <item itemvalue="Django server.IMmonitor" />
+      <item itemvalue="Python.insert_signal" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.insert_signal" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -290,22 +294,21 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50067025" side_tool="true" weight="0.32952926" />
-      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.50067025" side_tool="true" weight="0.32952926" />
+      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info active="true" anchor="bottom" id="Python Console" order="10" visible="true" weight="0.30527818" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32952926" />
-      <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info active="true" anchor="bottom" id="Python Console" order="7" visible="true" weight="0.32952926" />
-      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49932975" weight="0.17094018" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1152815" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49932975" weight="0.37660486" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1541555" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="right" id="Database" order="3" />
-      <window_info anchor="right" id="SciView" order="3" weight="0.10120644" />
+      <window_info anchor="right" id="Database" order="4" />
+      <window_info anchor="right" id="SciView" order="3" weight="0.34115282" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -315,27 +318,27 @@
       <window_info anchor="bottom" id="Find" order="1" />
     </layout>
     <layout-to-restore>
+      <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1152815" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" id="SciView" order="3" visible="true" weight="0.10120644" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32952926" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1541555" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32952926" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Python Console" order="10" visible="true" weight="0.32952926" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" id="Database" order="4" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49932975" weight="0.17094018" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49932975" weight="0.16975749" />
       <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.50067025" side_tool="true" weight="0.32952926" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="right" id="SciView" order="3" visible="true" weight="0.18766756" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Python Console" order="10" visible="true" weight="0.32952926" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -350,56 +353,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/extra_apps/xadmin/plugins/ueditor.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="3" column="51" selection-start-line="3" selection-start-column="51" selection-end-line="3" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/IMmonitor/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="21" selection-start-line="21" selection-end-line="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/motors/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
-          <folding>
-            <element signature="e#152#192#1" />
-            <element signature="e#222#330#0" />
-            <element signature="e#1328#1343#0" />
-            <element signature="e#2201#3209#0" />
-            <element signature="e#3236#3870#0" />
-            <element signature="e#3898#4534#0" />
-            <element signature="e#4575#4857#0" />
-            <element signature="e#4841#4857#0" />
-            <element signature="e#4889#5091#0" />
-            <element signature="e#5075#5091#0" />
-            <element signature="e#5374#5709#0" />
-            <element signature="e#5694#5709#0" />
-            <element signature="e#5737#5741#0" />
-            <element signature="e#5769#5773#0" />
-            <element signature="e#5801#5805#0" />
-            <element signature="e#5841#6554#0" />
-            <element signature="e#6539#6554#0" />
-            <element signature="e#6586#6590#0" />
-            <element signature="e#6622#6626#0" />
-            <element signature="e#6658#6662#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/motors/adminx.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/motors/apps.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="95">
@@ -455,18 +408,7 @@
             <element signature="e#3898#4534#0" />
             <element signature="e#4575#4857#0" />
             <element signature="e#4841#4857#0" />
-            <element signature="e#4889#5091#0" />
             <element signature="e#5075#5091#0" />
-            <element signature="e#5374#5709#0" />
-            <element signature="e#5694#5709#0" />
-            <element signature="e#5737#5741#0" />
-            <element signature="e#5769#5773#0" />
-            <element signature="e#5801#5805#0" />
-            <element signature="e#5841#6554#0" />
-            <element signature="e#6539#6554#0" />
-            <element signature="e#6586#6590#0" />
-            <element signature="e#6622#6626#0" />
-            <element signature="e#6658#6662#0" />
           </folding>
         </state>
       </provider>
@@ -516,18 +458,7 @@
             <element signature="e#3898#4534#0" />
             <element signature="e#4575#4857#0" />
             <element signature="e#4841#4857#0" />
-            <element signature="e#4889#5091#0" />
             <element signature="e#5075#5091#0" />
-            <element signature="e#5374#5709#0" />
-            <element signature="e#5694#5709#0" />
-            <element signature="e#5737#5741#0" />
-            <element signature="e#5769#5773#0" />
-            <element signature="e#5801#5805#0" />
-            <element signature="e#5841#6554#0" />
-            <element signature="e#6539#6554#0" />
-            <element signature="e#6586#6590#0" />
-            <element signature="e#6622#6626#0" />
-            <element signature="e#6658#6662#0" />
           </folding>
         </state>
       </provider>
@@ -559,18 +490,7 @@
             <element signature="e#3898#4534#0" />
             <element signature="e#4575#4857#0" />
             <element signature="e#4841#4857#0" />
-            <element signature="e#4889#5091#0" />
             <element signature="e#5075#5091#0" />
-            <element signature="e#5374#5709#0" />
-            <element signature="e#5694#5709#0" />
-            <element signature="e#5737#5741#0" />
-            <element signature="e#5769#5773#0" />
-            <element signature="e#5801#5805#0" />
-            <element signature="e#5841#6554#0" />
-            <element signature="e#6539#6554#0" />
-            <element signature="e#6586#6590#0" />
-            <element signature="e#6622#6626#0" />
-            <element signature="e#6658#6662#0" />
           </folding>
         </state>
       </provider>
@@ -651,27 +571,6 @@
     <entry file="file://$PROJECT_DIR$/static/xadmin/vendor/select2/select2.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/motors/adminx.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/motors/apps.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" column="25" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/extra_apps/xadmin/templates/xadmin/base_site.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2033">
-          <caret line="107" column="55" selection-start-line="107" selection-start-column="55" selection-end-line="107" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/extra_apps/xadmin/templates/xadmin/base.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="19">
@@ -679,16 +578,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/IMmonitor/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2470">
-          <caret line="130" column="15" selection-start-line="130" selection-start-column="15" selection-end-line="130" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db_tools/Description">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/db_tools/Description" />
     <entry file="file://$PROJECT_DIR$/db_tools/Memo.txt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -702,10 +592,59 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/IMmonitor/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2470">
+          <caret line="130" column="15" selection-start-line="130" selection-start-column="15" selection-end-line="130" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/extra_apps/xadmin/templates/xadmin/base_site.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2147">
+          <caret line="113" selection-start-line="113" selection-end-line="113" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://F:/Pyenv/IMmonitor/Lib/site-packages/numpy/fft/fftpack.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="311" column="40" selection-start-line="311" selection-start-column="40" selection-end-line="311" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://F:/Pyenv/IMmonitor/Lib/site-packages/numpy/core/multiarray.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1068">
+          <caret line="693" column="4" selection-start-line="693" selection-start-column="4" selection-end-line="693" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/motors/adminx.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/motors/apps.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="5" column="36" selection-start-line="5" selection-start-column="36" selection-end-line="5" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://F:/Pyenv/IMmonitor/Lib/site-packages/scipy/fftpack/pseudo_diffs.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="642">
+          <caret line="258" column="16" selection-start-line="258" selection-start-column="16" selection-end-line="258" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/SymComponents/gsy.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="52" selection-start-line="52" selection-end-line="54" selection-end-column="30" />
+        <state relative-caret-position="423">
+          <caret line="103" column="13" selection-start-line="103" selection-end-line="104" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
             <element signature="e#278#549#0" />
@@ -715,8 +654,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/motors/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="79">
-          <caret line="113" column="20" selection-start-line="113" selection-start-column="20" selection-end-line="113" selection-end-column="20" />
+        <state relative-caret-position="211">
+          <caret line="134" column="12" selection-start-line="134" selection-start-column="12" selection-end-line="134" selection-end-column="12" />
           <folding>
             <element signature="e#152#192#1" />
             <element signature="e#222#330#0" />
@@ -726,28 +665,27 @@
             <element signature="e#3898#4534#0" />
             <element signature="e#4575#4857#0" />
             <element signature="e#4841#4857#0" />
-            <element signature="e#4889#5091#0" />
             <element signature="e#5075#5091#0" />
-            <element signature="e#5374#5709#0" />
-            <element signature="e#5694#5709#0" />
-            <element signature="e#5737#5741#0" />
-            <element signature="e#5769#5773#0" />
-            <element signature="e#5801#5805#0" />
-            <element signature="e#5841#6554#0" />
-            <element signature="e#6539#6554#0" />
-            <element signature="e#6586#6590#0" />
-            <element signature="e#6622#6626#0" />
-            <element signature="e#6658#6662#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/db_tools/insert_signal.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
+        <state relative-caret-position="361">
+          <caret line="19" column="31" lean-forward="true" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
           <folding>
             <element signature="e#0#74#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db_tools/cal_features.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="271">
+          <caret line="46" column="15" selection-start-line="46" selection-start-column="15" selection-end-line="46" selection-end-column="15" />
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
           </folding>
         </state>
       </provider>

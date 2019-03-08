@@ -103,9 +103,9 @@ class CurrentSignalPack(models.Model):
 
 
 class phase(models.Model):
-    signal = models.TextField(blank=False, null=False, verbose_name='Collected Signal vector')
+    signal = models.BinaryField(blank=False, null=False, verbose_name='Collected Signal vector')
     signal_pack = models.OneToOneField(CurrentSignalPack, verbose_name='Parent pack', on_delete=models.CASCADE)
-    complex_signal = models.TextField(blank=True, null=True, verbose_name='Complex signal')
+    complex_signal = models.BinaryField(blank=True, null=True, verbose_name='Complex signal')
 
     class Meta:
         abstract = True
@@ -132,6 +132,8 @@ class Feature(models.Model):
     fbpfi = models.FloatField('Defect inner race bearing characteristic frequency', default=0)
     fbpfo = models.FloatField('Defect outter race bearing characteristic frequency', default=0)
     fbsf = models.FloatField('Defect rolling element characteristic frequency', default=0)
+    max_current = models.FloatField('Maximum current value', default=0)
+    min_current = models.FloatField('Minimum current value', default=0)
 
     class Meta:
         abstract = True
@@ -149,11 +151,11 @@ class Wfeature(Feature):
     pass
 
 
-class SymComponent(models.Model): #Only one phase syscomponents are calculated and stored
+class SymComponent(models.Model):  # Only one phase syscomponents are calculated and stored
     signal_pack = models.OneToOneField(CurrentSignalPack, verbose_name='Parent pack', on_delete=models.CASCADE)
-    nagative_sequence = models.TextField("Negative sequence waveform", blank=True, null=True)
-    positive_sequence = models.TextField("Positive sequence waveform", blank=True, null=True)
-    zero_sequence = models.TextField("Zero sequence waveform", blank=True, null=True)
+    nagative_sequence = models.BinaryField("Negative sequence waveform", blank=True, null=True)
+    positive_sequence = models.BinaryField("Positive sequence waveform", blank=True, null=True)
+    zero_sequence = models.BinaryField("Zero sequence waveform", blank=True, null=True)
     n_sequence_rms = models.FloatField('Negative sequence root-mean-square', default=0)
     p_sequence_rms = models.FloatField('Positive sequence root-mean-square', default=0)
     z_sequence_rms = models.FloatField('Zero sequence root-mean-square', default=0)
@@ -162,9 +164,9 @@ class SymComponent(models.Model): #Only one phase syscomponents are calculated a
 
 class SpecEnvelope(models.Model):
     signal_pack = models.OneToOneField(CurrentSignalPack, verbose_name='Parent pack', on_delete=models.CASCADE)
-    spec = models.TextField('Spectrum', blank=True, null=True)
-    env = models.TextField('Envelope', blank=True, null=True)
-    env_spec = models.TextField('Spectrum of Envelope', blank=True, null=True)
+    spec = models.BinaryField('Spectrum', blank=True, null=True)
+    env = models.BinaryField('Envelope', blank=True, null=True)
+    env_spec = models.BinaryField('Spectrum of Envelope', blank=True, null=True)
 
     class Meta:
         abstract = True
