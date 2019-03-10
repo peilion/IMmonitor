@@ -49,6 +49,137 @@ def parameter_estimation(wave, sampling_rate):
     return p1
 
 
+def cal_symm(a, b, c):
+    """
+    .. _cal_symm :
+    Calculates the 3-phase symmetrical components (Fortescue).
+    Accepts complex form of three-phase inputs. Returns the Positive sequence,
+    the Negative sequence and the Zero sequence.
+    .. math ::
+        A = e^{j \\frac{2}{3} \pi} = \\angle 120^{\circ}
+
+    Commonly, the lowercase of :math:`A`, :math:`\\alpha`, is used.
+    To avoid confusion with :math:`a` (/eɪ/), the uppercase, :math:`A`, is used here instead.
+    .. math ::
+        \left[\\begin{matrix}
+        a_{+} \\\\ b_{+} \\\\ c_{+}
+        \end{matrix}\\right]
+        &= \\frac{1}{3}
+        \left[\\begin{matrix}
+        1 & A & A^2
+        \\\\ A^2 & 1 & A
+        \\\\ A & A^2 & 1
+        \end{matrix}\\right]
+        \left[\\begin{matrix}
+        a \\\\ b \\\\ c
+        \end{matrix}\\right]
+        \\\\
+        \left[\\begin{matrix}
+        a_{-} \\\\ b_{-} \\\\ c_{-}
+        \end{matrix}\\right]
+        &= \\frac{1}{3}
+        \left[\\begin{matrix}
+        1 & A^2 & A
+        \\\\ A & 1 & A^2
+        \\\\ A^2 & A & 1
+        \end{matrix}\\right]
+        \left[\\begin{matrix}
+        a \\\\ b \\\\ c
+        \end{matrix}\\right]
+
+        \\\\
+        \left[\\begin{matrix}
+        a_{Zero} \\\\ b_{Zero} \\\\ c_{Zero}
+        \end{matrix}\\right]
+        = \\frac{1}{3}
+        \left[\\begin{matrix}
+        1 & 1 & 1
+        \\\\ 1 & 1 & 1
+        \\\\ 1 & 1 & 1
+        \end{matrix}\\right]
+        \left[\\begin{matrix}
+        a \\\\ b \\\\ c
+        \end{matrix}\\right]
+    ===================== ============================================================
+    where:
+    ===================== ============================================================
+    :math:`A`               is the :math:`120^{\circ}` shifter;
+    :math:`a`               is the Phase-A input;
+    :math:`b`               is the Phase-B input;
+    :math:`c`               is the Phase-C input;
+    :math:`a_+`             is the positive sequence of Phase-A input;
+    :math:`b_+`             is the positive sequence of Phase-B input;
+    :math:`c_+`             is the positive sequence of Phase-C input;
+    :math:`a_-`             is the negative sequence of Phase-A input;
+    :math:`b_-`             is the negative sequence of Phase-B input;
+    :math:`c_-`             is the negative sequence of Phase-C input;
+    :math:`a_{Zero}`        is the zero sequence of Phase-A input;
+    :math:`b_{Zero}`        is the zero sequence of Phase-B input;
+    :math:`c_{Zero}`        is the zero sequence of Phase-C input.
+    ===================== ============================================================
+    Parameters
+    ----------
+    a : complex or a list of complex
+        Phase-A inputs
+    b : complex or a list of complex
+        Phase-B inputs
+    c : complex or a list of complex
+        Phase-C inputs
+    Returns
+    -------
+    a_pos : complex or a list of complex
+        Phase-A Positive sequence.
+    b_pos : complex or a list of complex
+        Phase-B Positive sequence.
+    c_pos : complex or a list of complex
+        Phase-C Positive sequence.
+    a_neg : complex or a list of complex
+        Phase-A Negative sequence.
+    b_neg : complex or a list of complex
+        Phase-B Negative sequence.
+    c_neg : complex or a list of complex
+        Phase-C Negative sequence.
+    Zero : complex or a list of complex
+        Ther Zero sequence. Since all zero sequence components are
+        the same, only one is returned.
+
+
+    Examples
+    --------
+
+    .. code :: python
+        import gsyTransforms as trf
+        (phaseA_pos, phaseB_pos,
+         phaseC_pos, phaseA_neg,
+         phaseB_neg, phaseC_neg,
+         phaseZero)              = trf.cal_symm(phaseAdata,
+                                                phaseBdata,
+                                                phaseCdata)
+    """
+
+    # 120 degree rotator
+    ALPHA = np.exp(1j * 2 / 3 * np.pi)
+
+    # Positive sequence
+    a_pos = 1 / 3 * (a + b * ALPHA + c * (ALPHA ** 2))
+
+    b_pos = 1 / 3 * (a * (ALPHA ** 2) + b + c * ALPHA)
+
+    c_pos = 1 / 3 * (a * ALPHA + b * (ALPHA ** 2) + c)
+
+    # Negative sequence
+    a_neg = 1 / 3 * (a + b * (ALPHA ** 2) + c * ALPHA)
+
+    b_neg = 1 / 3 * (a * ALPHA + b + c * (ALPHA ** 2))
+
+    c_neg = 1 / 3 * (a * (ALPHA ** 2) + b * ALPHA + c)
+
+    # zero sequence
+    zero = 1 / 3 * (a + b + c)
+
+    return a_pos, b_pos, c_pos, a_neg, b_neg, c_neg, zero
+
+
 # Load 3-phase data(fake), simply shifting the single phase signal.
 load_fn = 'Health_50Hz_Load_0.mat'
 load_data = sio.loadmat(load_fn)

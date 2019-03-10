@@ -49,7 +49,7 @@ INSTALLED_APPS = [
     'django_filters',
     'motors',
     'dashboard',
-    'django_extensions'
+    #'django_extensions'
 ]
 
 MIDDLEWARE = [

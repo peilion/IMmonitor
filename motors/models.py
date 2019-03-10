@@ -128,10 +128,6 @@ class Feature(models.Model):
     rms = models.FloatField('U phase root-mean-square', default=0)
     thd = models.FloatField('Total harmonic distortion %', default=0)
     harmonics = models.TextField('1st-20th harmonic energy')
-    fbrb = models.FloatField('Broken rotor bar characteristic frequency', default=0)
-    fbpfi = models.FloatField('Defect inner race bearing characteristic frequency', default=0)
-    fbpfo = models.FloatField('Defect outter race bearing characteristic frequency', default=0)
-    fbsf = models.FloatField('Defect rolling element characteristic frequency', default=0)
     max_current = models.FloatField('Maximum current value', default=0)
     min_current = models.FloatField('Minimum current value', default=0)
 
