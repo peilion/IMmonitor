@@ -323,7 +323,7 @@ for pack in dataset:
                                 n_sequence_rms=n_rms,
                                 p_sequence_rms=p_rms,
                                 z_sequence_rms=np.sqrt(np.dot(phaseZero, phaseZero) / phase.size),
-                                imbalance=n_rms/p_rms,
+                                imbalance=n_rms / p_rms,
                                 )
 
     # F50L5 = [1325, 1475, 1625, 1775]
