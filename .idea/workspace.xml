@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="eaebc6e5-fb0c-400f-ad63-6e666b5b88cb" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/IMmonitor/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/IMmonitor/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SymComponents/gsy.py" beforeDir="false" afterPath="$PROJECT_DIR$/SymComponents/gsy.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db_tools/cal_features.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_tools/cal_features.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db_tools/insert_signal.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_tools/insert_signal.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/motors/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/motors/models.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -18,17 +13,49 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/IMmonitor$insert_signal.coverage" NAME="insert_signal Coverage Results" MODIFIED="1552036822737" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/db_tools" />
+    <SUITE FILE_PATH="coverage/IMmonitor$cal_features.coverage" NAME="cal_features Coverage Results" MODIFIED="1552273845702" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/db_tools" />
   </component>
   <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
     <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="settings.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/IMmonitor/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="51" column="5" selection-start-line="51" selection-start-column="5" selection-end-line="51" selection-end-column="5" />
+            <state relative-caret-position="532">
+              <caret line="63" lean-forward="true" selection-start-line="63" selection-end-line="63" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="gsy.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SymComponents/gsy.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="475">
+              <caret line="34" column="20" selection-start-line="34" selection-start-column="20" selection-end-line="34" selection-end-column="20" />
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
+                <element signature="e#278#549#0" />
+                <element signature="e#915#1501#0" />
+                <element signature="e#1531#5900#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="gsyTransforms.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SymComponents/gsyTransforms.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="228">
+              <caret line="32" column="31" lean-forward="true" selection-start-line="32" selection-start-column="31" selection-end-line="32" selection-end-column="31" />
+              <folding>
+                <element signature="e#1003#5372#0" />
+                <element signature="e#5855#8037#0" />
+                <element signature="e#8565#12414#0" />
+                <element signature="e#12940#16056#0" />
+                <element signature="e#16535#20718#0" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -50,36 +77,57 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="cal_features.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/db_tools/cal_features.py">
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/motors/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1710">
-              <caret line="252" column="28" selection-start-line="252" selection-start-column="28" selection-end-line="252" selection-end-column="28" />
+            <state relative-caret-position="187">
+              <caret line="153" column="14" lean-forward="true" selection-start-line="153" selection-start-column="14" selection-end-line="153" selection-end-column="14" />
               <folding>
-                <element signature="e#0#43#0" expanded="true" />
-                <element signature="e#259#530#0" />
-                <element signature="e#596#781#0" />
-                <element signature="e#918#1393#0" />
-                <element signature="e#1518#5887#0" />
-                <element signature="e#203#364#0" />
-                <element signature="e#1374#1473#0" />
+                <element signature="e#152#192#1" />
+                <element signature="e#222#330#0" />
+                <element signature="e#1328#1343#0" />
+                <element signature="e#2201#3209#0" />
+                <element signature="e#3236#3870#0" />
+                <element signature="e#3898#4534#0" />
+                <element signature="e#4575#4857#0" />
+                <element signature="e#4841#4857#0" />
+                <element signature="e#5075#5091#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="gsyTransforms.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SymComponents/gsyTransforms.py">
+      <file leaf-file-name="cal_features.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/db_tools/cal_features.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="19">
-              <caret line="38" column="10" lean-forward="true" selection-start-line="38" selection-end-line="167" />
+            <state relative-caret-position="360">
+              <caret line="225" column="42" lean-forward="true" selection-start-line="225" selection-start-column="42" selection-end-line="225" selection-end-column="42" />
               <folding>
-                <element signature="e#1003#5372#0" />
-                <element signature="e#5855#8037#0" />
-                <element signature="e#8565#12414#0" />
-                <element signature="e#12940#16056#0" />
-                <element signature="e#16535#20718#0" />
-                <element signature="e#21190#22710#0" />
+                <element signature="e#0#157#0" expanded="true" />
+                <element signature="e#259#530#0" />
+                <element signature="e#259#314#1" />
+                <element signature="e#596#781#0" />
+                <element signature="e#210#266#1" />
+                <element signature="e#918#1393#0" />
+                <element signature="e#1518#5887#0" />
+                <element signature="e#1518#5327#1" />
+                <element signature="e#203#364#0" />
+                <element signature="e#1374#1473#0" />
+                <element signature="e#8163#8399#0" />
+                <element signature="e#8786#8877#0" />
+                <element signature="e#9504#9538#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="insert_signal.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/db_tools/insert_signal.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="342">
+              <caret line="23" column="115" lean-forward="true" selection-start-line="23" selection-start-column="105" selection-end-line="23" selection-end-column="115" />
+              <folding>
+                <element signature="e#0#74#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -148,7 +196,7 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="277" />
     <option name="y" value="120" />
     <option name="width" value="1569" />
@@ -169,7 +217,17 @@
             <path>
               <item name="IMmonitor" type="b2602c69:ProjectViewProjectNode" />
               <item name="IMmonitor" type="462c0819:PsiDirectoryNode" />
+              <item name="db_tools" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="IMmonitor" type="b2602c69:ProjectViewProjectNode" />
+              <item name="IMmonitor" type="462c0819:PsiDirectoryNode" />
               <item name="Harmonic-Analysis-master" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="IMmonitor" type="b2602c69:ProjectViewProjectNode" />
+              <item name="IMmonitor" type="462c0819:PsiDirectoryNode" />
+              <item name="motors" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="IMmonitor" type="b2602c69:ProjectViewProjectNode" />
@@ -214,7 +272,26 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.insert_signal">
+  <component name="RunManager" selected="Django server.IMmonitor">
+    <configuration name="cal_features" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="IMmonitor" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/db_tools" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/db_tools/cal_features.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
     <configuration name="insert_signal" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="IMmonitor" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -260,9 +337,11 @@
     <list>
       <item itemvalue="Django server.IMmonitor" />
       <item itemvalue="Python.insert_signal" />
+      <item itemvalue="Python.cal_features" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.cal_features" />
         <item itemvalue="Python.insert_signal" />
       </list>
     </recent_temporary>
@@ -287,7 +366,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.50067025" side_tool="true" weight="0.32952926" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.3293348" />
       <window_info active="true" anchor="bottom" id="Python Console" order="10" visible="true" weight="0.304253" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32952926" />
       <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49932975" weight="0.3762268" />
@@ -297,7 +376,7 @@
       <window_info anchor="right" id="SciView" order="3" weight="0.3491471" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3991276" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -333,33 +412,25 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
+  </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="3" />
+      <option name="time" value="4" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/motors/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="4" selection-start-line="4" selection-end-line="4" />
-          <folding>
-            <element signature="e#152#192#1" />
-            <element signature="e#222#330#0" />
-            <element signature="e#1328#1343#0" />
-            <element signature="e#2201#3209#0" />
-            <element signature="e#3236#3870#0" />
-            <element signature="e#3898#4534#0" />
-            <element signature="e#4575#4857#0" />
-            <element signature="e#4841#4857#0" />
-            <element signature="e#5075#5091#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/SymComponents/gsy.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1805">
@@ -367,9 +438,8 @@
           <folding>
             <element signature="e#0#18#0" expanded="true" />
             <element signature="e#278#549#0" />
-            <element signature="e#589#861#0" />
             <element signature="e#915#1501#0" />
-            <element signature="e#1529#5898#0" />
+            <element signature="e#1531#5900#0" />
           </folding>
         </state>
       </provider>
@@ -454,13 +524,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Harmonics.jpg">
       <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SymComponents/sin_fit.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="262">
-          <caret line="49" column="20" selection-start-line="49" selection-start-column="20" selection-end-line="49" selection-end-column="20" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://F:/Pyenv/IMmonitor/Lib/site-packages/django/db/models/base.py" />
     <entry file="file://F:/Pyenv/IMmonitor/Lib/site-packages/DjangoUeditor/models.py" />
@@ -580,20 +643,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SymComponents/gsy.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="179" column="57" lean-forward="true" selection-start-line="179" selection-start-column="57" selection-end-line="179" selection-end-column="57" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-            <element signature="e#278#549#0" />
-            <element signature="e#589#861#0" />
-            <element signature="e#915#1501#0" />
-            <element signature="e#1529#5898#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Harmonic-Analysis-master/Harmonic-Analysis.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -607,10 +656,58 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/IMmonitor/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="532">
+          <caret line="63" lean-forward="true" selection-start-line="63" selection-end-line="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://E:/Pyenv/IMmonitor/Lib/site-packages/django/apps/registry.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="126" selection-start-line="126" selection-end-line="126" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SymComponents/sin_fit.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="455">
+          <caret line="49" column="20" selection-start-line="49" selection-start-column="20" selection-end-line="49" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SymComponents/gsy.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="34" column="20" selection-start-line="34" selection-start-column="20" selection-end-line="34" selection-end-column="20" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+            <element signature="e#278#549#0" />
+            <element signature="e#915#1501#0" />
+            <element signature="e#1531#5900#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SymComponents/gsyTransforms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="32" column="31" lean-forward="true" selection-start-line="32" selection-start-column="31" selection-end-line="32" selection-end-column="31" />
+          <folding>
+            <element signature="e#1003#5372#0" />
+            <element signature="e#5855#8037#0" />
+            <element signature="e#8565#12414#0" />
+            <element signature="e#12940#16056#0" />
+            <element signature="e#16535#20718#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/db_tools/insert_signal.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="14" column="60" selection-start-line="14" selection-start-column="60" selection-end-line="14" selection-end-column="60" />
+        <state relative-caret-position="342">
+          <caret line="23" column="115" lean-forward="true" selection-start-line="23" selection-start-column="105" selection-end-line="23" selection-end-column="115" />
           <folding>
             <element signature="e#0#74#0" expanded="true" />
           </folding>
@@ -619,8 +716,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/motors/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="129" column="60" selection-start-line="129" selection-start-column="60" selection-end-line="129" selection-end-column="60" />
+        <state relative-caret-position="187">
+          <caret line="153" column="14" lean-forward="true" selection-start-line="153" selection-start-column="14" selection-end-line="153" selection-end-column="14" />
           <folding>
             <element signature="e#152#192#1" />
             <element signature="e#222#330#0" />
@@ -635,41 +732,25 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SymComponents/gsyTransforms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="38" column="10" lean-forward="true" selection-start-line="38" selection-end-line="167" />
-          <folding>
-            <element signature="e#1003#5372#0" />
-            <element signature="e#5855#8037#0" />
-            <element signature="e#8565#12414#0" />
-            <element signature="e#12940#16056#0" />
-            <element signature="e#16535#20718#0" />
-            <element signature="e#21190#22710#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/db_tools/cal_features.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1710">
-          <caret line="252" column="28" selection-start-line="252" selection-start-column="28" selection-end-line="252" selection-end-column="28" />
+        <state relative-caret-position="360">
+          <caret line="225" column="42" lean-forward="true" selection-start-line="225" selection-start-column="42" selection-end-line="225" selection-end-column="42" />
           <folding>
-            <element signature="e#0#43#0" expanded="true" />
+            <element signature="e#0#157#0" expanded="true" />
             <element signature="e#259#530#0" />
+            <element signature="e#259#314#1" />
             <element signature="e#596#781#0" />
+            <element signature="e#210#266#1" />
             <element signature="e#918#1393#0" />
             <element signature="e#1518#5887#0" />
+            <element signature="e#1518#5327#1" />
             <element signature="e#203#364#0" />
             <element signature="e#1374#1473#0" />
+            <element signature="e#8163#8399#0" />
+            <element signature="e#8786#8877#0" />
+            <element signature="e#9504#9538#0" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/IMmonitor/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="51" column="5" selection-start-line="51" selection-start-column="5" selection-end-line="51" selection-end-column="5" />
         </state>
       </provider>
     </entry>
