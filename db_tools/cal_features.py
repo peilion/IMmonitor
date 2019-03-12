@@ -4,7 +4,6 @@ import numpy as np
 from scipy import signal, fftpack, optimize
 
 dataset = CurrentSignalPack.objects.all()
-import matplotlib.pyplot as plt
 import time
 
 
@@ -281,12 +280,12 @@ for pack in dataset:
     # print(end-st)
 
     def create_feature(feature, index):
-        feature.objects.create(signal_pack=pack,
-                               rms=rms_list[index],
-                               thd=THD_list[index],
-                               harmonics_list=str(harmonics[index]),
-                               max_current=max_list[index],
-                               min_current=min_list[index])
+        feature.objects.update_or_create(signal_pack=pack,
+                                         rms=rms_list[index],
+                                         thd=THD_list[index],
+                                         harmonics=str(harmonics),
+                                         max_current=max_list[index],
+                                         min_current=min_list[index])
 
 
     create_feature(Ufeature, index=0)
@@ -295,7 +294,9 @@ for pack in dataset:
 
 
     def update_phase(phase, index):
-        phase.objects.get(signal_pack=pack).update(complex_signal=complex_list[index].tostring())
+        _t = phase.objects.get(signal_pack=pack)
+        _t.estimated_parameter = str(p[index])
+        _t.save()
 
 
     update_phase(Uphase, index=0)
@@ -304,10 +305,10 @@ for pack in dataset:
 
 
     def create_processed(processed, index):
-        processed.objects.create(signal_pakc=pack,
-                                 spec=spectrum_list[index],
-                                 env=envelope_list[index],
-                                 env_spec=hspectrum_list[index], )
+        processed.objects.update_or_create(signal_pack=pack,
+                                           spec=spectrum_list[index].tostring(),
+                                           env=envelope_list[index].tostring(),
+                                           env_spec=hspectrum_list[index].tostring(), )
 
 
     create_processed(Uprocessed, index=0)
@@ -316,15 +317,15 @@ for pack in dataset:
 
     n_rms = np.sqrt(np.dot(phaseA_neg, phaseA_neg) / phase.size)
     p_rms = np.sqrt(np.dot(phaseA_pos, phaseA_pos) / phase.size)
-    SymComponent.objects.create(signal_pack=pack,
-                                nagative_sequence=phaseA_neg.tostring(),
-                                positive_sequence=phaseA_pos.tostring(),
-                                zero_sequence=phaseZero,
-                                n_sequence_rms=n_rms,
-                                p_sequence_rms=p_rms,
-                                z_sequence_rms=np.sqrt(np.dot(phaseZero, phaseZero) / phase.size),
-                                imbalance=n_rms / p_rms,
-                                )
+    SymComponent.objects.update_or_create(signal_pack=pack,
+                                          nagative_sequence=phaseA_neg.tostring(),
+                                          positive_sequence=phaseA_pos.tostring(),
+                                          zero_sequence=phaseZero.tostring(),
+                                          n_sequence_rms=n_rms,
+                                          p_sequence_rms=p_rms,
+                                          z_sequence_rms=np.sqrt(np.dot(phaseZero, phaseZero) / phase.size),
+                                          imbalance=n_rms / p_rms,
+                                          )
 
     # F50L5 = [1325, 1475, 1625, 1775]
     # F40L5 = [725, 875, 1025, 1175]

@@ -17,8 +17,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 import sys
 
-sys.path.insert(0,BASE_DIR)
-sys.path.insert(0,os.path.join(BASE_DIR, 'extra_apps'))
+sys.path.insert(0, BASE_DIR)
+sys.path.insert(0, os.path.join(BASE_DIR, 'extra_apps'))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
@@ -30,7 +30,6 @@ SECRET_KEY = '67h!danx5nsb#mhf65!igydm#^^356wymc(12h^isn5h7!q09)'
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
 
 # Application definition
 
@@ -49,7 +48,7 @@ INSTALLED_APPS = [
     'django_filters',
     'motors',
     'dashboard',
-    #'django_extensions'
+    # 'django_extensions'
 ]
 
 MIDDLEWARE = [
@@ -61,7 +60,12 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
-
+REST_FRAMEWORK = {
+    'DEFAULT_RENDERER_CLASSES': (
+        'rest_framework.renderers.JSONRenderer',
+        'rest_framework.renderers.BrowsableAPIRenderer',
+    )
+}
 
 TEMPLATES = [
     {
@@ -80,7 +84,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'IMmonitor.wsgi.application'
-
 
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
@@ -101,7 +104,6 @@ DATABASES = {
     }
 }
 
-
 # Password validation
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators
 
@@ -120,7 +122,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/2.0/topics/i18n/
 
@@ -133,7 +134,6 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/

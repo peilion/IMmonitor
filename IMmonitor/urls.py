@@ -14,9 +14,25 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path,include
+from django.urls import path, include, re_path
 import xadmin
+from rest_framework.routers import DefaultRouter
+from dashboard.views import MotorsListViewSet, RotorListViewSet, StatorListViewSet, BearingListViewSet, \
+    WarningLogListViewSet, WeeklyRecordListViewSet, TreemMapView
+from rest_framework.documentation import include_docs_urls
+
+router = DefaultRouter()
+router.register(r'motors', MotorsListViewSet, base_name='motors')
+router.register(r'bearings', BearingListViewSet, base_name='bearings')
+router.register(r'rotors', RotorListViewSet, base_name='rotors')
+router.register(r'stators', StatorListViewSet, base_name='stators')
+router.register(r'warningLog', WarningLogListViewSet, base_name='warning log')
+router.register(r'weeklyrecord', WeeklyRecordListViewSet, base_name='Weekly record')
 urlpatterns = [
     path('ueditor/', include('DjangoUeditor.urls')),
     path('xadmin/', xadmin.site.urls),
+    re_path('^', include(router.urls)),
+    path('docs', include_docs_urls(title='Induction Motor Monitoring API')),
+    path('treemap/', TreemMapView.as_view(), name='Tree map API'),
+
 ]

@@ -44,7 +44,7 @@ class Motor(Asset):
 
 
 class Bearing(Asset):
-    motor = models.ForeignKey(Motor, on_delete=models.CASCADE)  # 一对一与机组共有资产表关联
+    motor = models.ForeignKey(Motor, on_delete=models.CASCADE, related_name='bearings')  # 一对一与机组共有资产表关联
 
     inner_race_diameter = models.FloatField(null=True, blank=True, verbose_name='Inner race diameter /mm')  # 内径
     inner_race_width = models.FloatField(null=True, blank=True, verbose_name='Inner race width /mm')  # 内圈宽度
@@ -60,7 +60,7 @@ class Bearing(Asset):
 
 
 class Rotor(Asset):
-    motor = models.ForeignKey(Motor, on_delete=models.CASCADE)  # 一对一与机组共有资产表关联
+    motor = models.ForeignKey(Motor, on_delete=models.CASCADE, related_name='rotors')  # 一对一与机组共有资产表关联
     length = models.FloatField(null=True, blank=True, verbose_name='Length /mm')  # 铁心长度
     outer_diameter = models.FloatField(null=True, blank=True, verbose_name='Outer diameter /mm')  # 外径
     inner_diameter = models.FloatField(null=True, blank=True, verbose_name='Inner diameter /mm')  # 内径
@@ -70,7 +70,7 @@ class Rotor(Asset):
 
 
 class Stator(Asset):
-    motor = models.ForeignKey(Motor, on_delete=models.CASCADE)  # 一对一与机组共有资产表关联
+    motor = models.ForeignKey(Motor, on_delete=models.CASCADE, related_name='stators')  # 一对一与机组共有资产表关联
     length = models.FloatField(null=True, blank=True, verbose_name='Length /mm')  # 铁心长度
     outer_diameter = models.FloatField(null=True, blank=True, verbose_name='Outer diameter /mm')  # 外径
     inner_diameter = models.FloatField(null=True, blank=True, verbose_name='Inner diameter /mm')  # 内径
@@ -98,14 +98,14 @@ class Tag(models.Model):
 
 class CurrentSignalPack(models.Model):
     time = models.DateTimeField(auto_now_add=True, verbose_name='Collected Time')
-    motor = models.ForeignKey(Motor, on_delete=models.CASCADE)
+    motor = models.ForeignKey(Motor, on_delete=models.CASCADE, related_name='packs')
     sampling_rate = models.IntegerField(null=True, blank=True)
 
 
 class phase(models.Model):
     signal = models.BinaryField(blank=False, null=False, verbose_name='Collected Signal vector')
     signal_pack = models.OneToOneField(CurrentSignalPack, verbose_name='Parent pack', on_delete=models.CASCADE)
-    complex_signal = models.BinaryField(blank=True, null=True, verbose_name='Complex signal')
+    estimated_parameter = models.CharField(max_length=500, blank=True, null=True, verbose_name='Estimated parameter')
 
     class Meta:
         abstract = True
