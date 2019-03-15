@@ -18,8 +18,9 @@ from django.urls import path, include, re_path
 import xadmin
 from rest_framework.routers import DefaultRouter
 from dashboard.views import MotorsListViewSet, RotorListViewSet, StatorListViewSet, BearingListViewSet, \
-    WarningLogListViewSet, WeeklyRecordListViewSet, TreemMapView
+    WarningLogListViewSet, WeeklyRecordListViewSet, TreemMapView, MotorTrendRetriveViewset, MotorStatusView
 from rest_framework.documentation import include_docs_urls
+from auth.views import LoginView, getUserInfo
 
 router = DefaultRouter()
 router.register(r'motors', MotorsListViewSet, base_name='motors')
@@ -28,11 +29,15 @@ router.register(r'rotors', RotorListViewSet, base_name='rotors')
 router.register(r'stators', StatorListViewSet, base_name='stators')
 router.register(r'warningLog', WarningLogListViewSet, base_name='warning log')
 router.register(r'weeklyrecord', WeeklyRecordListViewSet, base_name='Weekly record')
+router.register(r'trend', MotorTrendRetriveViewset, base_name='Motor THD trend ')
+
 urlpatterns = [
     path('ueditor/', include('DjangoUeditor.urls')),
     path('xadmin/', xadmin.site.urls),
     re_path('^', include(router.urls)),
     path('docs', include_docs_urls(title='Induction Motor Monitoring API')),
     path('treemap/', TreemMapView.as_view(), name='Tree map API'),
-
+    path('imstatus/', MotorStatusView.as_view(), name='Motor statu overview API'),
+    path('login', LoginView.as_view(), name='Login'),
+    path('user/info', getUserInfo.as_view(), name='User info')
 ]

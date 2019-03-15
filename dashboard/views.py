@@ -1,11 +1,12 @@
 from rest_framework import mixins, viewsets, filters
 from motors.serializers import MotorsSerializer, RotorSerializer, BearingsSerializer, StatorSerializer, \
-    WarningLogSerializer, WeeklyRecordSerializer
+    WarningLogSerializer, WeeklyRecordSerializer, MotorTrendSerializer
 from django_filters.rest_framework import DjangoFilterBackend
 from motors.models import Motor, Rotor, Bearing, Stator, WarningLog, WeeklyRecord
 from motors.filters import MotorsFilter, WarninglogFilter, WeeklyRecordFilter
 from rest_framework.views import APIView
 from rest_framework.response import Response
+
 
 class MotorsListViewSet(mixins.ListModelMixin, mixins.RetrieveModelMixin, viewsets.GenericViewSet):
     '''
@@ -15,19 +16,11 @@ class MotorsListViewSet(mixins.ListModelMixin, mixins.RetrieveModelMixin, viewse
         获取电机部分详情
     '''
 
-    # 这里必须要定义一个默认的排序,否则会报错
     queryset = Motor.objects.all().order_by('id')
-    # 分页
-    # 序列化
     serializer_class = MotorsSerializer
     filter_backends = (DjangoFilterBackend, filters.SearchFilter, filters.OrderingFilter)
-
-    # 设置filter的类为我们自定义的类
-    # 过滤
     filter_class = MotorsFilter
-    # 搜索
     search_fields = ('name', 'sn', 'statu')
-    # 排序
     ordering_fields = ('name')
 
 
@@ -60,9 +53,6 @@ class WeeklyRecordListViewSet(mixins.ListModelMixin, mixins.RetrieveModelMixin, 
     queryset = WeeklyRecord.objects.all().order_by('id')
     serializer_class = WeeklyRecordSerializer
     filter_backends = (DjangoFilterBackend,)
-
-    # 设置filter的类为我们自定义的类
-    # 过滤
     filter_class = WeeklyRecordFilter
 
 
@@ -83,3 +73,14 @@ class TreemMapView(APIView):
         return Response(treejson)
 
 
+class MotorTrendRetriveViewset(mixins.ListModelMixin, mixins.RetrieveModelMixin, viewsets.GenericViewSet):
+    queryset = Motor.objects.all().order_by('id')
+    serializer_class = MotorTrendSerializer
+
+
+class MotorStatusView(APIView):
+    def get(self, request, format=None):
+        statistic={}
+        for item in Motor.asset_status:
+            statistic[item[1]]= Motor.objects.filter(statu=item[0]).count()
+        return Response(statistic)

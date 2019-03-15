@@ -20,7 +20,7 @@ class Asset(models.Model):
     statu = models.SmallIntegerField(choices=asset_status, default=2, verbose_name='Asset statu')
     manufacturer = models.ForeignKey('Manufacturer', null=True, blank=True, on_delete=models.SET_NULL,
                                      verbose_name='Manufacturer')
-    tags = models.ManyToManyField('Tag', null=True, blank=True, verbose_name='Tags')
+    tags = models.ManyToManyField('Tag', blank=True, verbose_name='Tags')
 
     lr_time = models.DateTimeField(null=True, blank=True, verbose_name='Last repair/check date')
     pr_time = models.DateTimeField(null=True, blank=True, verbose_name='Purchase date')

@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from motors.models import Motor, Bearing, Rotor, Stator, WarningLog, WeeklyRecord
+from motors.models import Motor, Bearing, Rotor, Stator, WarningLog, WeeklyRecord, Ufeature, CurrentSignalPack
 from rest_framework.renderers import JSONRenderer
 
 
@@ -51,28 +51,25 @@ class WeeklyRecordSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 
+class FeatureSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Ufeature
+        fields = ('thd',)
+
+
 class MotorTrendSerializer(serializers.ModelSerializer):
     trend = serializers.SerializerMethodField()
 
     def get_trend(self, obj):
-        trend_json = {}
-        motor = Motor.objects.filter(id=obj.id, )
-        if motor:
-            # 取到这个商品Queryset[0]
-            signalpacks = motor[0].packs.all()
-            u_thd_trend = []
-            for pack in signalpacks:
-                u_thd_trend.append(pack.ufeature.thd)
-        return JSONRenderer(u_thd_trend)
+        all_features = Ufeature.objects.filter(signal_pack__motor_id=obj.id)[:100]
+        trend_serializer = FeatureSerializer(all_features, many=True, context={'request': self.context['request']})
+        trend_list = [item['thd'] for item in trend_serializer.data]
 
-    # 自定义获取方法
-    def get_goods(self, obj):
-        # 将这个商品相关父类子类等都可以进行匹配
-        all_goods = Goods.objects.filter(Q(category_id=obj.id) | Q(category__parent_category_id=obj.id) | Q(
-            category__parent_category__parent_category_id=obj.id))
-        goods_serializer = GoodsSerializer(all_goods, many=True, context={'request': self.context['request']})
-        return goods_serializer.data
+        all_packs = CurrentSignalPack.objects.filter(motor_id=obj.id)[:100]
+        time_list = [pack.time.strftime('%Y-%m-%d') for pack in all_packs]
+        return {'trend': trend_list,
+                'time': time_list}
 
     class Meta:
         model = Motor
-        fields = ('name', 'statu')
+        fields = ('name', 'statu', 'trend')

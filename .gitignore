@@ -1,6 +1,4 @@
 .DS_Store
-Vue-admin/node_modules/
 .idea/
-MxShop/Front/node_modules/
-
+.vue-element-admin/node_modules/
 package-lock.json
