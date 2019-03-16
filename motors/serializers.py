@@ -1,5 +1,6 @@
 from rest_framework import serializers
-from motors.models import Motor, Bearing, Rotor, Stator, WarningLog, WeeklyRecord, Ufeature, CurrentSignalPack
+from motors.models import Motor, Bearing, Rotor, Stator, WarningLog, WeeklyRecord, Ufeature, CurrentSignalPack, \
+    Vfeature, Wfeature, SymComponent, Uphase
 from rest_framework.renderers import JSONRenderer
 
 
@@ -57,6 +58,19 @@ class FeatureSerializer(serializers.ModelSerializer):
         fields = ('thd',)
 
 
+class PSFserializer(serializers.ModelSerializer):
+    psf = serializers.SerializerMethodField()
+
+    def get_psf(self, obj):
+        psf = float(obj.estimated_parameter.replace('[', '').replace(']', '').replace('  ', ' ').strip().split(' ')[1])
+        # Considering change the filed used to store estimated sin parameter, above line parses unnaturally.
+        return psf
+
+    class Meta:
+        model = Uphase
+        fields = ('psf',)
+
+
 class MotorTrendSerializer(serializers.ModelSerializer):
     trend = serializers.SerializerMethodField()
 
@@ -73,3 +87,33 @@ class MotorTrendSerializer(serializers.ModelSerializer):
     class Meta:
         model = Motor
         fields = ('name', 'statu', 'trend')
+
+
+class DashBoardRadarFeatureSerializer(serializers.ModelSerializer):
+    rmsfeatures = serializers.SerializerMethodField()
+    symfeatures = serializers.SerializerMethodField()
+    psf = serializers.SerializerMethodField()
+
+    def get_rmsfeatures(self, obj):
+        import time
+        start = time.time()
+        return {'urms': Motor.objects.get(id=obj.id).packs.last().ufeature.rms,
+                'vrms': Motor.objects.get(id=obj.id).packs.last().vfeature.rms,
+                'wrms': Motor.objects.get(id=obj.id).packs.last().wfeature.rms}
+        end = time.time()
+        print(end - start)
+
+    def get_symfeatures(self, obj):
+        return {
+            'ns': Motor.objects.get(id=obj.id).packs.last().symcomponent.n_sequence_rms,
+            'ps': Motor.objects.get(id=obj.id).packs.last().symcomponent.n_sequence_rms,
+        }
+
+    def get_psf(self, obj):
+        phase_object = Uphase.objects.filter(signal_pack__motor_id=obj.id).last()
+        trend_serializer = PSFserializer(phase_object, context={'request': self.context['request']})
+        return trend_serializer.data
+
+    class Meta:
+        model = Motor
+        fields = ('name', 'rmsfeatures', 'symfeatures', 'psf')

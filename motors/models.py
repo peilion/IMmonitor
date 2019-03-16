@@ -203,3 +203,4 @@ class MonthlyRecord(models.Model):
     c_day = models.DateField(auto_now_add=True, verbose_name='Created time')
     description = UEditorField(verbose_name=u"Content", imagePath="monthly/images/", width=1000, height=300,
                                filePath="monthly/files/", default='')
+

@@ -18,7 +18,8 @@ from django.urls import path, include, re_path
 import xadmin
 from rest_framework.routers import DefaultRouter
 from dashboard.views import MotorsListViewSet, RotorListViewSet, StatorListViewSet, BearingListViewSet, \
-    WarningLogListViewSet, WeeklyRecordListViewSet, TreemMapView, MotorTrendRetriveViewset, MotorStatusView
+    WarningLogListViewSet, WeeklyRecordListViewSet, TreemMapView, MotorTrendRetriveViewset, MotorStatusView, \
+    DashBoardMotorFeatureViewset
 from rest_framework.documentation import include_docs_urls
 from auth.views import LoginView, getUserInfo
 
@@ -30,7 +31,7 @@ router.register(r'stators', StatorListViewSet, base_name='stators')
 router.register(r'warningLog', WarningLogListViewSet, base_name='warning log')
 router.register(r'weeklyrecord', WeeklyRecordListViewSet, base_name='Weekly record')
 router.register(r'trend', MotorTrendRetriveViewset, base_name='Motor THD trend ')
-
+router.register(r'dashboard-radar', DashBoardMotorFeatureViewset, base_name='dash board radar')
 urlpatterns = [
     path('ueditor/', include('DjangoUeditor.urls')),
     path('xadmin/', xadmin.site.urls),

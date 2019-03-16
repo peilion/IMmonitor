@@ -1,6 +1,6 @@
 from rest_framework import mixins, viewsets, filters
 from motors.serializers import MotorsSerializer, RotorSerializer, BearingsSerializer, StatorSerializer, \
-    WarningLogSerializer, WeeklyRecordSerializer, MotorTrendSerializer
+    WarningLogSerializer, WeeklyRecordSerializer, MotorTrendSerializer, DashBoardRadarFeatureSerializer
 from django_filters.rest_framework import DjangoFilterBackend
 from motors.models import Motor, Rotor, Bearing, Stator, WarningLog, WeeklyRecord
 from motors.filters import MotorsFilter, WarninglogFilter, WeeklyRecordFilter
@@ -80,7 +80,12 @@ class MotorTrendRetriveViewset(mixins.ListModelMixin, mixins.RetrieveModelMixin,
 
 class MotorStatusView(APIView):
     def get(self, request, format=None):
-        statistic={}
+        statistic = {}
         for item in Motor.asset_status:
-            statistic[item[1]]= Motor.objects.filter(statu=item[0]).count()
+            statistic[item[1]] = Motor.objects.filter(statu=item[0]).count()
         return Response(statistic)
+
+
+class DashBoardMotorFeatureViewset(mixins.ListModelMixin, mixins.RetrieveModelMixin, viewsets.GenericViewSet):
+    queryset = Motor.objects.all().order_by('id')
+    serializer_class = DashBoardRadarFeatureSerializer
