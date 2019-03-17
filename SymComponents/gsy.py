@@ -1,11 +1,11 @@
 import numpy as np
-import gsyTransforms as trf
+import SymComponents.gsyTransforms as trf
 import matplotlib.pyplot as plt
 from scipy import io as sio
 from scipy import optimize
 
-TIMEEND = 0.1
-SAMPLING_RATE = 20000
+SAMPLING_RATE = 20480
+TIMEEND = 8192/20480
 SAMPLE_NUMBER = int(TIMEEND * SAMPLING_RATE)
 
 
@@ -42,7 +42,7 @@ def parameter_estimation(wave, sampling_rate):
     spec = np.fft.rfft(wave)
     freq = np.linspace(0, sampling_rate / 2, size / 2 + 1)
     spec = np.abs(spec)
-    p0 = [max(data), freq[np.argmax(spec)], np.pi * freq[np.argmax(spec)]]  # Initial guess for the parameters
+    p0 = [max(wave), freq[np.argmax(spec)], np.pi * freq[np.argmax(spec)]]  # Initial guess for the parameters
     # p0 = [max(data), 50, 0.7]
     Tx = np.linspace(0, size / sampling_rate, size)
     p1, success = optimize.leastsq(errfunc, p0[:], args=(Tx, wave))
@@ -181,12 +181,11 @@ def cal_symm(a, b, c):
 
 
 # Load 3-phase data(fake), simply shifting the single phase signal.
-load_fn = 'Health_50Hz_Load_0.mat'
-load_data = sio.loadmat(load_fn)
-data = load_data['data'][:, 0]
-phaseA = data[500000:500000 + SAMPLE_NUMBER]
-phaseB = data[500000 - 133:500000 + SAMPLE_NUMBER - 133]
-phaseC = data[500000 + 133:500000 + SAMPLE_NUMBER + 133]
+from motors.models import CurrentSignalPack,Uphase,Vphase,Wphase
+pack = CurrentSignalPack.objects.last()
+phaseA = np.fromstring(pack.vphase.signal)
+phaseB = np.fromstring(pack.uphase.signal)
+phaseC = np.fromstring(pack.wphase.signal)
 Tx = np.linspace(0, TIMEEND, SAMPLE_NUMBER)
 
 # Illustrate the original waveform.
@@ -194,10 +193,10 @@ plt.plot(Tx, phaseA, "b-", Tx, phaseB, "r-", Tx, phaseC, "g-", )  # Plot of the 
 plt.show()
 
 # Estimate the parameters.
-time = np.linspace(Tx.min(), Tx.max(), 2000)
-pA = parameter_estimation(phaseA, 20000)
-pB = parameter_estimation(phaseB, 20000)
-pC = parameter_estimation(phaseC, 20000)
+time = np.linspace(Tx.min(), Tx.max(), 8192)
+pA = parameter_estimation(phaseA, 20480)
+pB = parameter_estimation(phaseB, 20480)
+pC = parameter_estimation(phaseC, 20480)
 
 # Illustrate the fitted curve.
 fitfunc = lambda p, x: p[0] * np.sin(2 * np.pi * p[1] * x + p[2])  # Target function

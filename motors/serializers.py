@@ -95,22 +95,18 @@ class DashBoardRadarFeatureSerializer(serializers.ModelSerializer):
     psf = serializers.SerializerMethodField()
 
     def get_rmsfeatures(self, obj):
-        import time
-        start = time.time()
-        return {'urms': Motor.objects.get(id=obj.id).packs.last().ufeature.rms,
-                'vrms': Motor.objects.get(id=obj.id).packs.last().vfeature.rms,
-                'wrms': Motor.objects.get(id=obj.id).packs.last().wfeature.rms}
-        end = time.time()
-        print(end - start)
+        return {'urms': obj.packs.last().ufeature.rms,
+                'vrms': obj.packs.last().vfeature.rms,
+                'wrms': obj.packs.last().wfeature.rms}
 
     def get_symfeatures(self, obj):
         return {
-            'ns': Motor.objects.get(id=obj.id).packs.last().symcomponent.n_sequence_rms,
-            'ps': Motor.objects.get(id=obj.id).packs.last().symcomponent.n_sequence_rms,
+            'ns': obj.packs.last().symcomponent.n_sequence_rms,
+            'ps': obj.packs.last().symcomponent.p_sequence_rms,
         }
 
     def get_psf(self, obj):
-        phase_object = Uphase.objects.filter(signal_pack__motor_id=obj.id).last()
+        phase_object = obj.packs.last().uphase
         trend_serializer = PSFserializer(phase_object, context={'request': self.context['request']})
         return trend_serializer.data
 
