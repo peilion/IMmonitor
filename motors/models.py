@@ -105,7 +105,9 @@ class CurrentSignalPack(models.Model):
 class phase(models.Model):
     signal = models.BinaryField(blank=False, null=False, verbose_name='Collected Signal vector')
     signal_pack = models.OneToOneField(CurrentSignalPack, verbose_name='Parent pack', on_delete=models.CASCADE)
-    estimated_parameter = models.CharField(max_length=500, blank=True, null=True, verbose_name='Estimated parameter')
+    frequency = models.FloatField('PSF', default=0)
+    amplitude = models.FloatField('AMP', default=0)
+    initial_phase = models.FloatField('IPA',default=0)
 
     class Meta:
         abstract = True
@@ -127,10 +129,10 @@ class Feature(models.Model):
     signal_pack = models.OneToOneField(CurrentSignalPack, verbose_name='Parent pack', on_delete=models.CASCADE)
     rms = models.FloatField('U phase root-mean-square', default=0)
     thd = models.FloatField('Total harmonic distortion %', default=0)
-    harmonics = models.TextField('1st-20th harmonic energy')
+    harmonics = models.BinaryField('1st-20th harmonic energy')
     max_current = models.FloatField('Maximum current value', default=0)
     min_current = models.FloatField('Minimum current value', default=0)
-
+    fbrb = models.BinaryField('Frequencies of Broken rotor bar',null=True)
     class Meta:
         abstract = True
 
@@ -149,35 +151,32 @@ class Wfeature(Feature):
 
 class SymComponent(models.Model):  # Only one phase syscomponents are calculated and stored
     signal_pack = models.OneToOneField(CurrentSignalPack, verbose_name='Parent pack', on_delete=models.CASCADE)
-    nagative_sequence = models.BinaryField("Negative sequence waveform", blank=True, null=True)
-    positive_sequence = models.BinaryField("Positive sequence waveform", blank=True, null=True)
-    zero_sequence = models.BinaryField("Zero sequence waveform", blank=True, null=True)
     n_sequence_rms = models.FloatField('Negative sequence root-mean-square', default=0)
     p_sequence_rms = models.FloatField('Positive sequence root-mean-square', default=0)
     z_sequence_rms = models.FloatField('Zero sequence root-mean-square', default=0)
     imbalance = models.FloatField('Current imbanlance %', default=0)
 
 
-class SpecEnvelope(models.Model):
-    signal_pack = models.OneToOneField(CurrentSignalPack, verbose_name='Parent pack', on_delete=models.CASCADE)
-    spec = models.BinaryField('Spectrum', blank=True, null=True)
-    env = models.BinaryField('Envelope', blank=True, null=True)
-    env_spec = models.BinaryField('Spectrum of Envelope', blank=True, null=True)
-
-    class Meta:
-        abstract = True
-
-
-class Uprocessed(SpecEnvelope):
-    pass
-
-
-class Vprocessed(SpecEnvelope):
-    pass
-
-
-class Wprocessed(SpecEnvelope):
-    pass
+# class SpecEnvelope(models.Model):
+#     signal_pack = models.OneToOneField(CurrentSignalPack, verbose_name='Parent pack', on_delete=models.CASCADE)
+#     spec = models.BinaryField('Spectrum', blank=True, null=True)
+#     env = models.BinaryField('Envelope', blank=True, null=True)
+#     env_spec = models.BinaryField('Spectrum of Envelope', blank=True, null=True)
+#
+#     class Meta:
+#         abstract = True
+#
+#
+# class Uprocessed(SpecEnvelope):
+#     pass
+#
+#
+# class Vprocessed(SpecEnvelope):
+#     pass
+#
+#
+# class Wprocessed(SpecEnvelope):
+#     pass
 
 
 class WarningLog(models.Model):
@@ -203,4 +202,3 @@ class MonthlyRecord(models.Model):
     c_day = models.DateField(auto_now_add=True, verbose_name='Created time')
     description = UEditorField(verbose_name=u"Content", imagePath="monthly/images/", width=1000, height=300,
                                filePath="monthly/files/", default='')
-

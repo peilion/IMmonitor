@@ -1,11 +1,9 @@
-from motors.models import CurrentSignalPack, Ufeature, Vfeature, Wfeature, SymComponent, Uprocessed, Vprocessed, Uphase, \
-    Vphase, Wphase, Wprocessed
+from motors.models import CurrentSignalPack, Ufeature, Vfeature, Wfeature, SymComponent, Uphase, \
+    Vphase, Wphase
 import numpy as np
 from scipy import signal, fftpack, optimize
 
 dataset = CurrentSignalPack.objects.all()
-import time
-
 
 def cal_samples(phaseAOmega, phaseBOmega, phaseCOmega, end_time):
     '''
@@ -90,16 +88,14 @@ for pack in dataset:
     RATE = pack.sampling_rate
     LENGTH = u.shape[0]
     FREQ_INTERVAL = RATE / 2 / (LENGTH / 2)
-    spectrum_list = []
     PSF_list = []
-    envelope_list = []
-    hspectrum_list = []
     complex_list = []
     max_list = []
     harmonics_list = []
     THD_list = []
     rms_list = []
     min_list = []
+    brb_list = []
     for phase in [u, v, w]:
         # FFt
         phase = signal.detrend(phase, type='constant')
@@ -117,15 +113,16 @@ for pack in dataset:
             nth_harmonic = phase_fft[int(hm)] / fundamental
             total = total + nth_harmonic ** 2
             harmonics.append(nth_harmonic)
+        harmonics = np.array(harmonics)
         # total = np.sqrt(total)
         THD = np.sqrt(total)
-
         # Hilbert transform
         Shiftted = np.abs(signal.hilbert(phase))
         phase_envelope = signal.detrend(Shiftted[1024:1024 + 4096])
         # Hilebert spectrum
         phase_envelope_fft = fftransform(phase_envelope)
         phase_envelope_fft_axis = np.linspace(0, RATE / 2, len(phase_envelope) / 2 + 1)
+        brb_list.append(phase_envelope_fft[:10])
 
         # RMS
         rms = np.sqrt(np.dot(phase, phase) / phase.size)
@@ -133,9 +130,6 @@ for pack in dataset:
         # Maximum and minimum
         maximum = np.max(phase)
         minimum = np.min(phase)
-        spectrum_list.append(phase_fft)
-        envelope_list.append(phase_envelope)
-        hspectrum_list.append(fftransform(phase_envelope_fft))
         PSF_list.append(PSF)
         max_list.append(maximum)
         harmonics_list.append(harmonics)
@@ -177,9 +171,11 @@ for pack in dataset:
         feature.objects.update_or_create(signal_pack=pack,
                                          rms=rms_list[index],
                                          thd=THD_list[index],
-                                         harmonics=str(harmonics),
+                                         harmonics=harmonics.tostring(),
                                          max_current=max_list[index],
-                                         min_current=min_list[index])
+                                         min_current=min_list[index],
+                                         fbrb=brb_list[index].tostring())
+
 
 
     create_feature(Ufeature, index=0)
@@ -189,7 +185,9 @@ for pack in dataset:
 
     def update_phase(phase, index):
         _t = phase.objects.get(signal_pack=pack)
-        _t.estimated_parameter = str(p[index])
+        _t.frequency = p[index][1]
+        _t.amplitude = p[index][0]
+        _t.initial_phase = p[index][2]
         _t.save()
 
 
@@ -198,59 +196,13 @@ for pack in dataset:
     update_phase(Wphase, index=2)
 
 
-    def create_processed(processed, index):
-        processed.objects.update_or_create(signal_pack=pack,
-                                           spec=spectrum_list[index].tostring(),
-                                           env=envelope_list[index].tostring(),
-                                           env_spec=hspectrum_list[index].tostring(), )
-
-
-    create_processed(Uprocessed, index=0)
-    create_processed(Vprocessed, index=1)
-    create_processed(Wprocessed, index=2)
-
-    n_rms = np.sqrt(np.dot(phaseA_neg, phaseA_neg) / phase.size)
-    p_rms = np.sqrt(np.dot(phaseA_pos, phaseA_pos) / phase.size)
+    n_rms = np.sqrt(np.dot(phaseA_neg.real, phaseA_neg.real) / phase.size)
+    p_rms = np.sqrt(np.dot(phaseA_pos.real, phaseA_pos.real) / phase.size)
     SymComponent.objects.update_or_create(signal_pack=pack,
-                                          nagative_sequence=phaseA_neg.tostring(),
-                                          positive_sequence=phaseA_pos.tostring(),
-                                          zero_sequence=phaseZero.tostring(),
                                           n_sequence_rms=n_rms,
                                           p_sequence_rms=p_rms,
-                                          z_sequence_rms=np.sqrt(np.dot(phaseZero, phaseZero) / phase.size),
+                                          z_sequence_rms=np.sqrt(np.dot(phaseZero.real, phaseZero.real) / phase.size),
                                           imbalance=n_rms / p_rms,
                                           )
 
-    # F50L5 = [1325, 1475, 1625, 1775]
-    # F40L5 = [725, 875, 1025, 1175]
-    # F30L5 = [125, 275, 425, 675]
-    #
-    # temp = F30L5
-    # spec1, freq = pack_process(CurrentSignalPack.objects.get(id=temp[0]))  # 蓝
-    # spec2, _ = pack_process(CurrentSignalPack.objects.get(id=temp[1]))  # 橙
-    # spec3, _ = pack_process(CurrentSignalPack.objects.get(id=temp[2]))  # 绿
-    # spec4, _ = pack_process(CurrentSignalPack.objects.get(id=temp[3]))  # 红
-    #
-    # fig, axs = plt.subplots(2, 2)
-    # axs[0, 0].plot(freq, spec1)
-    # axs[0, 0].set_xlim(0, 100)
-    # axs[0, 0].set_ylim(0, 12.5)
-    # axs[0, 0].set_ylabel('BRB')
-    #
-    # axs[0, 1].plot(freq, spec2)
-    # axs[0, 1].set_xlim(0, 100)
-    # axs[0, 1].set_ylabel('BRM')
-    # axs[0, 1].set_ylim(0, 12.5)
-    #
-    # axs[1, 0].plot(freq, spec3)
-    # axs[1, 0].set_xlim(0, 100)
-    # axs[1, 0].set_ylabel('HEA')
-    # axs[1, 0].set_ylim(0, 12.5)
-    #
-    # axs[1, 1].plot(freq, spec4)
-    # axs[1, 1].set_xlim(0, 100)
-    # axs[1, 1].set_ylabel('RMAM')
-    # axs[1, 1].set_ylim(0, 12.5)
-    #
-    # fig.tight_layout()
-    # plt.show()
+

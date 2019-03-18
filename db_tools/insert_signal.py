@@ -5,8 +5,8 @@ import numpy as np
 import scipy.io as sio
 
 SAMPLING_RATE = 20480
-ROOT_PATHS = [r"G:\Researchs\Motor fusion\30HzData", r"G:\Researchs\Motor fusion\40HzData", r"G:\Researchs\Motor fusion\50HzData"]
-#ROOT_PATHS = [r"F:\Motor fusion\30HzData", r"F:\Motor fusion\40HzData", r"F:\Motor fusion\50HzData"]
+#ROOT_PATHS = [r"G:\Researchs\Motor fusion\30HzData", r"G:\Researchs\Motor fusion\40HzData", r"G:\Researchs\Motor fusion\50HzData"]
+ROOT_PATHS = [r"F:\Motor fusion\30HzData", r"F:\Motor fusion\40HzData", r"F:\Motor fusion\50HzData"]
 
 j = 1
 PHASE_SHIFT = [228, 171, 137]
