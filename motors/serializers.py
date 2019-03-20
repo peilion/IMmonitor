@@ -59,16 +59,9 @@ class FeatureSerializer(serializers.ModelSerializer):
 
 
 class PSFserializer(serializers.ModelSerializer):
-    psf = serializers.SerializerMethodField()
-
-    def get_psf(self, obj):
-        psf = float(obj.estimated_parameter.replace('[', '').replace(']', '').replace('  ', ' ').strip().split(' ')[1])
-        # Considering change the filed used to store estimated sin parameter, above line parses unnaturally.
-        return psf
-
     class Meta:
         model = Uphase
-        fields = ('psf',)
+        fields = ('frequency',)
 
 
 class MotorTrendSerializer(serializers.ModelSerializer):
@@ -113,3 +106,22 @@ class DashBoardRadarFeatureSerializer(serializers.ModelSerializer):
     class Meta:
         model = Motor
         fields = ('name', 'rmsfeatures', 'symfeatures', 'psf')
+
+
+class IndexMotorCountSerializer(serializers.ModelSerializer):
+    stator = serializers.SerializerMethodField()
+    rotor = serializers.SerializerMethodField()
+    bearing = serializers.SerializerMethodField()
+
+    def get_stator(self, obj):
+        return obj.stators.count()
+
+    def get_bearing(self, obj):
+        return obj.bearings.count()
+
+    def get_rotor(self, obj):
+        return obj.rotors.count()
+
+    class Meta:
+        model = Motor
+        fields = ('name', 'stator', 'rotor', 'bearing')

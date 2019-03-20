@@ -1,11 +1,13 @@
 from rest_framework import mixins, viewsets, filters
 from motors.serializers import MotorsSerializer, RotorSerializer, BearingsSerializer, StatorSerializer, \
-    WarningLogSerializer, WeeklyRecordSerializer, MotorTrendSerializer, DashBoardRadarFeatureSerializer
+    WarningLogSerializer, WeeklyRecordSerializer, MotorTrendSerializer, DashBoardRadarFeatureSerializer, \
+    IndexMotorCountSerializer
 from django_filters.rest_framework import DjangoFilterBackend
 from motors.models import Motor, Rotor, Bearing, Stator, WarningLog, WeeklyRecord
 from motors.filters import MotorsFilter, WarninglogFilter, WeeklyRecordFilter
 from rest_framework.views import APIView
 from rest_framework.response import Response
+from pandas import date_range
 
 
 class MotorsListViewSet(mixins.ListModelMixin, mixins.RetrieveModelMixin, viewsets.GenericViewSet):
@@ -40,7 +42,7 @@ class StatorListViewSet(mixins.ListModelMixin, mixins.RetrieveModelMixin, viewse
 
 
 class WarningLogListViewSet(mixins.ListModelMixin, mixins.RetrieveModelMixin, viewsets.GenericViewSet):
-    queryset = WarningLog.objects.all().order_by('id')
+    queryset = WarningLog.objects.all().order_by('-id')
     serializer_class = WarningLogSerializer
     filter_backends = (DjangoFilterBackend,)
 
@@ -89,3 +91,20 @@ class MotorStatusView(APIView):
 class DashBoardMotorFeatureViewset(mixins.ListModelMixin, mixins.RetrieveModelMixin, viewsets.GenericViewSet):
     queryset = Motor.objects.all().order_by('id')
     serializer_class = DashBoardRadarFeatureSerializer
+
+
+class IndexMotorCountViewset(mixins.ListModelMixin, mixins.RetrieveModelMixin, viewsets.GenericViewSet):
+    queryset = Motor.objects.all().order_by('id')
+    serializer_class = IndexMotorCountSerializer
+
+
+class IndexWarningCalendarView(APIView):
+    def get(self, request, formant=None):
+        year = 2019
+        date_only_dic = {str(item.date()): 0 for item in
+                         date_range('1/1/%s' % year, '31/12/%s' % year, normalize=True)}
+        all_warninglog = WarningLog.objects.all()
+        for wl in all_warninglog:
+            date_only_dic[str(wl.c_day.date())] += 1
+        warning_list = [[date, count] for date, count in date_only_dic.items()]
+        return Response(warning_list)
