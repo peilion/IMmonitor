@@ -13,13 +13,12 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.contrib import admin
 from django.urls import path, include, re_path
 import xadmin
 from rest_framework.routers import DefaultRouter
 from dashboard.views import MotorsListViewSet, RotorListViewSet, StatorListViewSet, BearingListViewSet, \
     WarningLogListViewSet, WeeklyRecordListViewSet, TreemMapView, MotorTrendRetriveViewset, MotorStatusView, \
-    DashBoardMotorFeatureViewset, IndexMotorCountViewset, IndexWarningCalendarView
+    DashBoardMotorFeatureViewset, IndexMotorCountViewset, IndexWarningCalendarView, IndexProgressBarView
 from rest_framework.documentation import include_docs_urls
 from auth.views import LoginView, getUserInfo
 
@@ -30,17 +29,19 @@ router.register(r'rotors', RotorListViewSet, base_name='rotors')
 router.register(r'stators', StatorListViewSet, base_name='stators')
 router.register(r'warningLog', WarningLogListViewSet, base_name='warning log')
 router.register(r'weeklyrecord', WeeklyRecordListViewSet, base_name='Weekly record')
-router.register(r'trend', MotorTrendRetriveViewset, base_name='Motor THD trend ')
-router.register(r'dashboard-radar', DashBoardMotorFeatureViewset, base_name='dash board radar')
-router.register('index-bar', IndexMotorCountViewset, base_name='Motor component count')
+router.register(r'index-trend', MotorTrendRetriveViewset, base_name='Motor THD trend ')
+router.register(r'index-radar', DashBoardMotorFeatureViewset, base_name='dash board radar')
+router.register(r'index-bar', IndexMotorCountViewset, base_name='Motor component count')
+
 urlpatterns = [
     path('ueditor/', include('DjangoUeditor.urls')),
     path('xadmin/', xadmin.site.urls),
     re_path('^', include(router.urls)),
     path('docs', include_docs_urls(title='Induction Motor Monitoring API')),
-    path('treemap/', TreemMapView.as_view(), name='Tree map API'),
+    path('index-treemap/', TreemMapView.as_view(), name='Tree map API'),
     path('imstatus/', MotorStatusView.as_view(), name='Motor statu overview API'),
     path('login', LoginView.as_view(), name='Login'),
     path('user/info', getUserInfo.as_view(), name='User info'),
-    path('warningcalendar/', IndexWarningCalendarView.as_view(), name='Calendar')
+    path('index-calendar/', IndexWarningCalendarView.as_view(), name='Calendar'),
+    path('index-serverstatu/', IndexProgressBarView.as_view(), name='Table Statu')
 ]

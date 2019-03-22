@@ -13,7 +13,7 @@ class LoginView(APIView):
                 'roles': ['admin'],
                 'token': 'admin',
                 'introduction': 'This is superuser',
-                'avatar': 'https://wpimg.wallstcn.com/f778738c-e4f8-4870-b634-56703b4acafe.gif',
+                'avatar': 'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2720094078,3198972262&fm=26&gp=0.jpg',
                 'name': 'Super admin'
             }
         }
@@ -28,7 +28,7 @@ class getUserInfo(APIView):
                 'roles': ['admin'],
                 'token': 'admin',
                 'introduction': 'This is superuser',
-                'avatar': 'https://wpimg.wallstcn.com/f778738c-e4f8-4870-b634-56703b4acafe.gif',
+                'avatar': 'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2720094078,3198972262&fm=26&gp=0.jpg',
                 'name': 'Super admin'
             }
         }

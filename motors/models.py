@@ -21,7 +21,7 @@ class Asset(models.Model):
     manufacturer = models.ForeignKey('Manufacturer', null=True, blank=True, on_delete=models.SET_NULL,
                                      verbose_name='Manufacturer')
     tags = models.ManyToManyField('Tag', blank=True, verbose_name='Tags')
-
+    health_indicator = models.FloatField('Value of Health Indicator',default=85)
     lr_time = models.DateTimeField(null=True, blank=True, verbose_name='Last repair/check date')
     pr_time = models.DateTimeField(null=True, blank=True, verbose_name='Purchase date')
     md_time = models.DateTimeField(auto_now=True, verbose_name='Modified date')

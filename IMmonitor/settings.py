@@ -103,6 +103,14 @@ DATABASES = {
         # 因为后面第三方登录时，要求引擎为INNODB
         # 'OPTIONS':{'init_command': 'SET storage_engine=INNODB'},    #按照课程会报错，改为
         # "OPTIONS": {"init_command": "SET default_storage_engine=INNODB;"}
+    },
+    'tabinformation': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'information_schema',  # 数据库名字
+        'USER': 'root',  # 账号
+        'PASSWORD': '',  # 密码
+        'HOST': '127.0.0.1',  # IP
+        'PORT': '3306',  # 端口
     }
 }
 

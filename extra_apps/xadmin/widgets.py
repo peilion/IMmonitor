@@ -30,6 +30,7 @@ class AdminDateWidget(forms.DateInput):
         super(AdminDateWidget, self).__init__(attrs=final_attrs, format=format)
 
     def render(self, name, value, attrs=None):
+        attrs["readonly"] = 'readonly'
         input_html = super(AdminDateWidget, self).render(name, value, attrs)
         return mark_safe('<div class="input-group date bootstrap-datepicker"><span class="input-group-addon"><i class="fa fa-calendar"></i></span>%s'
                          '<span class="input-group-btn"><button class="btn btn-default" type="button">%s</button></span></div>' % (input_html, _(u'Today')))

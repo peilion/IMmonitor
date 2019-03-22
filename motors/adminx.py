@@ -30,7 +30,7 @@ class MotorAdmin(object):
     # 过滤器
     list_filter = ["name", "sn", "statu", "phase_number", 'pole_pairs_number']
     # 富文本编辑器
-    style_fields = {"memo": "ueditor"}
+    style_fields = {"memo": "ueditor",'tag':'m2m_transfer'}
 
     # 在添加商品的时候可以添加商品图片
     class BearingInline(object):
