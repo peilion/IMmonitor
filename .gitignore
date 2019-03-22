@@ -1,5 +1,5 @@
 .DS_Store
-.idea/
+.idea
 .vue-element-admin/node_modules/
 package-lock.json
 .IM-monitor-frontend-project-/
