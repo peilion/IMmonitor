@@ -2,34 +2,80 @@ from rest_framework import serializers
 from motors.models import Motor, Bearing, Rotor, Stator, WarningLog, WeeklyRecord, Ufeature, CurrentSignalPack, \
     Vfeature, Wfeature, SymComponent, Uphase
 from rest_framework.renderers import JSONRenderer
+from django.contrib.auth.models import User
+import itertools
+
+
+class UserSeralizer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ("username",)
 
 
 class BearingsSerializer(serializers.ModelSerializer):
+    admin = serializers.SerializerMethodField()
+
+    def get_admin(self, obj):
+        return UserSeralizer(obj.motor.admin).data
+
     class Meta:
         model = Bearing
-        fields = ("name", "statu", 'memo')
+        fields = ('id', "name", 'health_indicator', "statu", 'lr_time', 'tags', 'memo', 'admin')
 
 
 class RotorSerializer(serializers.ModelSerializer):
+    admin = serializers.SerializerMethodField()
+
     class Meta:
         model = Rotor
-        fields = ("name", "statu", 'memo')
+        fields = ('id', "name", 'health_indicator', "statu", 'lr_time', 'tags', 'memo', 'admin')
+
+    def get_admin(self, obj):
+        return UserSeralizer(obj.motor.admin).data
 
 
 class StatorSerializer(serializers.ModelSerializer):
+    admin = serializers.SerializerMethodField()
+
     class Meta:
         model = Stator
-        fields = ("name", "statu", 'memo')
+        fields = ('id', "name", 'health_indicator', "statu", 'lr_time', 'tags', 'memo', 'admin')
+
+    def get_admin(self, obj):
+        return UserSeralizer(obj.motor.admin).data
 
 
 class MotorsSerializer(serializers.ModelSerializer):
-    bearings = BearingsSerializer(many=True)
-    rotors = RotorSerializer(many=True)
-    stators = StatorSerializer(many=True)
+    children = serializers.SerializerMethodField()
+    tags = serializers.SerializerMethodField()
+    admin = UserSeralizer()
+    detail = serializers.SerializerMethodField()
+
+    def get_children(self, obj):
+        children = [
+            BearingsSerializer(obj.bearings.exclude(statu=4), many=True,
+                               context={'request': self.context['request']}).data,
+            RotorSerializer(obj.rotors.exclude(statu=4), many=True, context={'request': self.context['request']}).data,
+            StatorSerializer(obj.stators.exclude(statu=4), many=True,
+                             context={'request': self.context['request']}).data]
+        return list(itertools.chain(*children))
+
+    def get_tags(self, obj):
+        return [item.name for item in obj.tags.all()]
+
+    def get_detail(self, obj):
+        return {
+            'Phase Number': obj.phase_number,
+            'Pole Pairs Number': obj.pole_pairs_number,
+            'Turn Number': obj.turn_number,
+            'Rated Voltage': obj.rated_voltage,
+            'Rated Speed': obj.rated_speed,
+        }
 
     class Meta:
         model = Motor
-        fields = ("name", 'sn', 'statu', 'memo', 'admin', 'bearings', 'rotors', 'stators')
+        fields = (
+        'id', "name", 'sn', 'statu', 'memo', 'admin', 'health_indicator', 'lr_time', 'children', 'tags', 'detail')
 
 
 class WarningMotorSerializer(serializers.ModelSerializer):

@@ -11,7 +11,7 @@ from pandas import date_range
 import psutil
 
 
-class MotorsListViewSet(mixins.ListModelMixin, mixins.RetrieveModelMixin, viewsets.GenericViewSet):
+class MotorsListViewSet(mixins.ListModelMixin, mixins.RetrieveModelMixin, mixins.UpdateModelMixin, viewsets.GenericViewSet):
     '''
     list:
         电机列表，搜索，过滤，排序
