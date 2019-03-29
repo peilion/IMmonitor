@@ -1,7 +1,7 @@
 # coding=utf-8
 from django.contrib.auth.forms import PasswordResetForm, SetPasswordForm
 from django.contrib.auth.tokens import default_token_generator
-from django.contrib.auth.views import password_reset_confirm
+from django.contrib.auth.views import PasswordResetConfirmView
 from django.template.response import TemplateResponse
 from django.utils.translation import ugettext as _
 
@@ -74,7 +74,7 @@ class ResetPasswordComfirmView(BaseAdminView):
 
     def do_view(self, request, uidb36, token, *args, **kwargs):
         context = super(ResetPasswordComfirmView, self).get_context()
-        return password_reset_confirm(request, uidb36, token,
+        return PasswordResetConfirmView(request, uidb36, token,
                    template_name=self.password_reset_confirm_template,
                    token_generator=self.password_reset_token_generator,
                    set_password_form=self.password_reset_set_form,

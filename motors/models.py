@@ -2,6 +2,13 @@ from django.db import models
 from django.contrib.auth.models import User
 from DjangoUeditor.models import UEditorField
 
+equip_types = (
+    (0, 'Motor'),
+    (1, 'Bearing'),
+    (2, 'Rotor'),
+    (3, 'Stator'),
+)
+
 
 class Asset(models.Model):
     """
@@ -14,14 +21,13 @@ class Asset(models.Model):
         (3, 'Poor'),
         (4, 'Offline'),
     )
-
     name = models.CharField(max_length=64, unique=True, verbose_name='Name of asset')
     sn = models.CharField(max_length=128, unique=True, verbose_name='Serial number')
     statu = models.SmallIntegerField(choices=asset_status, default=2, verbose_name='Asset statu')
     manufacturer = models.ForeignKey('Manufacturer', null=True, blank=True, on_delete=models.SET_NULL,
                                      verbose_name='Manufacturer')
     tags = models.ManyToManyField('Tag', blank=True, verbose_name='Tags')
-    health_indicator = models.FloatField('Value of Health Indicator',default=85)
+    health_indicator = models.FloatField('Value of Health Indicator', default=85)
     lr_time = models.DateTimeField(null=True, blank=True, verbose_name='Last repair/check date')
     pr_time = models.DateTimeField(null=True, blank=True, verbose_name='Purchase date')
     md_time = models.DateTimeField(auto_now=True, verbose_name='Modified date')
@@ -41,6 +47,7 @@ class Motor(Asset):
     memo = UEditorField(verbose_name=u"Memory", imagePath="motor/images/", width=1000, height=300,
                         filePath="motor/files/", default='')
     admin = models.ForeignKey(User, null=True, blank=True, verbose_name='Administrator', on_delete=models.SET_NULL)
+    equip_type = models.SmallIntegerField(choices=equip_types, default=0, verbose_name='Equipment type')
 
 
 class Bearing(Asset):
@@ -51,6 +58,7 @@ class Bearing(Asset):
 
     outter_race_diameter = models.FloatField(null=True, blank=True, verbose_name='Outter race diameter /mm')  # 外径
     outter_race_width = models.FloatField(null=True, blank=True, verbose_name='Outter race width /mm')  # 外圈宽度
+    equip_type = models.SmallIntegerField(choices=equip_types, default=1, verbose_name='Equipment type')
 
     roller_diameter = models.FloatField(null=True, blank=True, verbose_name='Roller diameter /mm')  # 滚动体直径
     roller_number = models.SmallIntegerField(null=True, blank=True, verbose_name='Number of rollers')  # 滚动体个数
@@ -67,6 +75,7 @@ class Rotor(Asset):
     slot_number = models.SmallIntegerField(null=True, blank=True, verbose_name='Number of slots')  # 槽数
     memo = UEditorField(verbose_name=u"Memory", imagePath="rotor/images/", width=1000, height=300,
                         filePath="rotor/files/", default='')
+    equip_type = models.SmallIntegerField(choices=equip_types, default=2, verbose_name='Equipment type')
 
 
 class Stator(Asset):
@@ -77,6 +86,7 @@ class Stator(Asset):
     slot_number = models.SmallIntegerField(null=True, blank=True, verbose_name='Number of slots')  # 槽数
     memo = UEditorField(verbose_name=u"Memory", imagePath="stator/images/", width=1000, height=300,
                         filePath="stator/files/", default='')
+    equip_type = models.SmallIntegerField(choices=equip_types, default=3, verbose_name='Equipment type')
 
 
 class Manufacturer(models.Model):
@@ -100,6 +110,7 @@ class CurrentSignalPack(models.Model):
     time = models.DateTimeField(auto_now_add=True, verbose_name='Collected Time')
     motor = models.ForeignKey(Motor, on_delete=models.CASCADE, related_name='packs')
     sampling_rate = models.IntegerField(null=True, blank=True)
+    rpm = models.SmallIntegerField('RPM', default=3000)
 
 
 class phase(models.Model):
@@ -107,7 +118,7 @@ class phase(models.Model):
     signal_pack = models.OneToOneField(CurrentSignalPack, verbose_name='Parent pack', on_delete=models.CASCADE)
     frequency = models.FloatField('PSF', default=0)
     amplitude = models.FloatField('AMP', default=0)
-    initial_phase = models.FloatField('IPA',default=0)
+    initial_phase = models.FloatField('IPA', default=0)
 
     class Meta:
         abstract = True
@@ -132,7 +143,8 @@ class Feature(models.Model):
     harmonics = models.BinaryField('1st-20th harmonic energy')
     max_current = models.FloatField('Maximum current value', default=0)
     min_current = models.FloatField('Minimum current value', default=0)
-    fbrb = models.BinaryField('Frequencies of Broken rotor bar',null=True)
+    fbrb = models.BinaryField('Frequencies of Broken rotor bar', null=True)
+
     class Meta:
         abstract = True
 

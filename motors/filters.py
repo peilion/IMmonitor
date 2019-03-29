@@ -4,10 +4,11 @@ from motors.models import Motor, WarningLog,WeeklyRecord
 
 class MotorsFilter(django_filters.rest_framework.FilterSet):
     statu = django_filters.ChoiceFilter(choices=Motor.asset_status)
+    id = django_filters.NumberFilter(field_name='id')
 
     class Meta:
         model = Motor
-        fields = ['statu']
+        fields = ['statu','id']
 
 
 class WarninglogFilter(django_filters.rest_framework.FilterSet):

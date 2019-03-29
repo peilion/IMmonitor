@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'django_filters',
     'motors',
     'dashboard',
+    'real_time',
     # 'django_extensions'
 ]
 

@@ -11,7 +11,8 @@ from pandas import date_range
 import psutil
 
 
-class MotorsListViewSet(mixins.ListModelMixin, mixins.RetrieveModelMixin, mixins.UpdateModelMixin, viewsets.GenericViewSet):
+class MotorsListViewSet(mixins.ListModelMixin, mixins.RetrieveModelMixin, mixins.UpdateModelMixin,
+                        viewsets.GenericViewSet):
     '''
     list:
         电机列表，搜索，过滤，排序
@@ -27,17 +28,20 @@ class MotorsListViewSet(mixins.ListModelMixin, mixins.RetrieveModelMixin, mixins
     ordering_fields = ('name')
 
 
-class RotorListViewSet(mixins.ListModelMixin, mixins.RetrieveModelMixin, viewsets.GenericViewSet):
+class RotorListViewSet(mixins.ListModelMixin, mixins.RetrieveModelMixin, mixins.UpdateModelMixin,
+                       viewsets.GenericViewSet):
     queryset = Rotor.objects.all().order_by('id')
     serializer_class = RotorSerializer
 
 
-class BearingListViewSet(mixins.ListModelMixin, mixins.RetrieveModelMixin, viewsets.GenericViewSet):
+class BearingListViewSet(mixins.ListModelMixin, mixins.RetrieveModelMixin, mixins.UpdateModelMixin,
+                         viewsets.GenericViewSet):
     queryset = Bearing.objects.all().order_by('id')
     serializer_class = BearingsSerializer
 
 
-class StatorListViewSet(mixins.ListModelMixin, mixins.RetrieveModelMixin, viewsets.GenericViewSet):
+class StatorListViewSet(mixins.ListModelMixin, mixins.RetrieveModelMixin, mixins.UpdateModelMixin,
+                        viewsets.GenericViewSet):
     queryset = Stator.objects.all().order_by('id')
     serializer_class = StatorSerializer
 
@@ -123,3 +127,5 @@ class IndexProgressBarView(APIView):
                          'table_count': CurrentSignalPack.objects.count(),
                          'cpu_statu': psutil.cpu_percent(None),
                          'memory_statu': psutil.virtual_memory().percent})
+
+

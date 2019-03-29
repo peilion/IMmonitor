@@ -1,9 +1,13 @@
 from rest_framework import serializers
 from motors.models import Motor, Bearing, Rotor, Stator, WarningLog, WeeklyRecord, Ufeature, CurrentSignalPack, \
-    Vfeature, Wfeature, SymComponent, Uphase
+    Vfeature, Wfeature, SymComponent, Uphase, equip_types
 from rest_framework.renderers import JSONRenderer
 from django.contrib.auth.models import User
 import itertools
+import numpy as np
+
+ComponentSerializerFields = (
+    'id', "name", 'equip_type', 'health_indicator', "statu", 'lr_time', 'tags', 'memo', 'admin')
 
 
 class UserSeralizer(serializers.ModelSerializer):
@@ -12,44 +16,81 @@ class UserSeralizer(serializers.ModelSerializer):
         fields = ("username",)
 
 
-class BearingsSerializer(serializers.ModelSerializer):
+class ComponentSerializer(serializers.ModelSerializer):
+    # This class is built for inherit only!!
+
     admin = serializers.SerializerMethodField()
+    detail = serializers.SerializerMethodField()
+
+    def get_detail(self, obj):
+        pass
 
     def get_admin(self, obj):
         return UserSeralizer(obj.motor.admin).data
+
+    def update(self, instance, validated_data):
+        # Patch Last repair time
+        instance.lr_time = validated_data['lr_time']
+        instance.save()
+        return instance
+
+    class Meta:
+        fields = (
+            'id', "name", 'equip_type', 'health_indicator', "statu", 'lr_time', 'tags', 'memo', 'admin', 'detail')
+
+
+class BearingsSerializer(ComponentSerializer):
+    def get_detail(self, obj):
+        return {
+            'Inner Race Diameter': obj.inner_race_diameter,
+            'Inner Race Width': obj.inner_race_width,
+            'Outter Race Diameter': obj.outter_race_diameter,
+            'Outter Race Width': obj.outter_race_width,
+            'Roller Diameter': obj.roller_diameter,
+            'Roller Number': obj.roller_number,
+            'Contact angle': obj.contact_angle,
+
+        }
 
     class Meta:
         model = Bearing
-        fields = ('id', "name", 'health_indicator', "statu", 'lr_time', 'tags', 'memo', 'admin')
+        fields = ComponentSerializer.Meta.fields
 
 
-class RotorSerializer(serializers.ModelSerializer):
-    admin = serializers.SerializerMethodField()
+class RotorSerializer(ComponentSerializer):
+    def get_detail(self, obj):
+        return {
+            'Rotor Length': obj.length,
+            'Outer Diameter': obj.outer_diameter,
+            'Inner Diameter': obj.inner_diameter,
+            'Slot Number': obj.slot_number,
+        }
 
     class Meta:
         model = Rotor
-        fields = ('id', "name", 'health_indicator', "statu", 'lr_time', 'tags', 'memo', 'admin')
-
-    def get_admin(self, obj):
-        return UserSeralizer(obj.motor.admin).data
+        fields = ComponentSerializer.Meta.fields
 
 
-class StatorSerializer(serializers.ModelSerializer):
-    admin = serializers.SerializerMethodField()
+class StatorSerializer(ComponentSerializer):
+    def get_detail(self, obj):
+        return {
+            'Stator Length': obj.length,
+            'Stator Diameter': obj.outer_diameter,
+            'Stator Inner Diameter': obj.inner_diameter,
+            'Slot Number': obj.slot_number,
+        }
 
     class Meta:
-        model = Stator
-        fields = ('id', "name", 'health_indicator', "statu", 'lr_time', 'tags', 'memo', 'admin')
-
-    def get_admin(self, obj):
-        return UserSeralizer(obj.motor.admin).data
+        model = Rotor
+        fields = ComponentSerializer.Meta.fields
 
 
 class MotorsSerializer(serializers.ModelSerializer):
     children = serializers.SerializerMethodField()
     tags = serializers.SerializerMethodField()
-    admin = UserSeralizer()
+    admin = UserSeralizer(read_only=True)
     detail = serializers.SerializerMethodField()
+    lr_time = serializers.DateTimeField(format='%Y-%m-%d %H:%M:%S')
 
     def get_children(self, obj):
         children = [
@@ -72,10 +113,17 @@ class MotorsSerializer(serializers.ModelSerializer):
             'Rated Speed': obj.rated_speed,
         }
 
+    def update(self, instance, validated_data):
+        # 修改商品数量
+        instance.lr_time = validated_data['lr_time']
+        instance.save()
+        return instance
+
     class Meta:
         model = Motor
         fields = (
-        'id', "name", 'sn', 'statu', 'memo', 'admin', 'health_indicator', 'lr_time', 'children', 'tags', 'detail')
+            'id', "name", 'sn', 'statu', 'memo', 'lr_time', 'health_indicator', 'admin', 'children', 'tags', 'detail',
+            'equip_type')
 
 
 class WarningMotorSerializer(serializers.ModelSerializer):
@@ -171,3 +219,5 @@ class IndexMotorCountSerializer(serializers.ModelSerializer):
     class Meta:
         model = Motor
         fields = ('name', 'stator', 'rotor', 'bearing')
+
+
