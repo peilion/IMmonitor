@@ -2,7 +2,7 @@ from rest_framework import serializers
 from motors.models import CurrentSignalPack, Ufeature, SymComponent
 from real_time.serializers import PhaseSerializer, fftransform
 import numpy as np
-
+from scipy import signal
 
 def dq0_transform(v_a, v_b, v_c):
     d = (np.sqrt(2 / 3) * v_a - (1 / (np.sqrt(6))) * v_b - (1 / (np.sqrt(6))) * v_c)
@@ -171,6 +171,25 @@ class HamonicsSerializer(serializers.ModelSerializer):
             tempDict[phase + 'harmonic'] = np.fromstring(feature.harmonics)
             tempDict[phase + 'fft'] = np.around(fftransform(np.fromstring(signal.signal)), decimals=3)
             tempDict[phase + 'thd'] = feature.thd
+        return tempDict
+
+    class Meta:
+        model = CurrentSignalPack
+        fields = "__all__"
+
+
+class EnvelopeSerializer(serializers.ModelSerializer):
+    data = serializers.SerializerMethodField()
+    time = serializers.DateTimeField(format='%Y-%m-%d %H:%M:%S')
+
+    def get_data(self, obj):
+        tempDict = {}
+        for phase_obj, phase in zip([obj.uphase, obj.vphase, obj.wphase], ['u', 'v', 'w']):
+            raw_signal = signal.detrend(np.fromstring(phase_obj.signal))
+            tempDict[phase + 'envelope'] = np.abs(signal.hilbert(raw_signal)[1024:1024 + 4096])
+            tempDict[phase + 'fft'] = np.around(fftransform(signal.detrend(tempDict[phase + 'envelope'])), decimals=3)
+            tempDict[phase + 'raw'] = raw_signal[1024:1024 + 4096]
+
         return tempDict
 
     class Meta:

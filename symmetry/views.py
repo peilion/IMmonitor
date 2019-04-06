@@ -3,7 +3,7 @@ from django_filters.rest_framework import DjangoFilterBackend
 from symmetry.filters import PackFilter
 from motors.models import Motor, CurrentSignalPack
 from symmetry.serializers import PackSerializer, PackListSerializer, DQPackSerializer, TrendSerializer, \
-    HamonicsSerializer
+    HamonicsSerializer, EnvelopeSerializer
 from rest_framework import mixins, viewsets
 
 
@@ -38,3 +38,7 @@ class HarmonicsPackListViewSet(mixins.RetrieveModelMixin, viewsets.GenericViewSe
     filter_backends = (DjangoFilterBackend,)
     filter_class = PackFilter
     serializer_class = HamonicsSerializer
+
+
+class EnvelopePackListViewSet(HarmonicsPackListViewSet):
+    serializer_class = EnvelopeSerializer

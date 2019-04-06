@@ -20,7 +20,8 @@ from dashboard.views import *
 from real_time.views import *
 from rest_framework.documentation import include_docs_urls
 from auth.views import LoginView, getUserInfo
-from symmetry.views import PackListViewSet, DQPackListViewSet, FeatureThrendListViewSet, HarmonicsPackListViewSet
+from symmetry.views import PackListViewSet, DQPackListViewSet, FeatureThrendListViewSet, HarmonicsPackListViewSet, \
+    EnvelopePackListViewSet
 
 router = DefaultRouter()
 router.register(r'motors', MotorsListViewSet, base_name='motors')
@@ -37,6 +38,7 @@ router.register(r'packs', PackListViewSet, base_name='Motor Current Signal Packs
 router.register(r'dqpacks', DQPackListViewSet, base_name='DQ transformation')
 router.register(r'feature-trend', FeatureThrendListViewSet, base_name='Feature Trend')
 router.register(r'harmonics', HarmonicsPackListViewSet, base_name='Harmonics')
+router.register(r'envelope', EnvelopePackListViewSet, base_name='Envelope')
 urlpatterns = [
     path('ueditor/', include('DjangoUeditor.urls')),
     path('xadmin/', xadmin.site.urls),
