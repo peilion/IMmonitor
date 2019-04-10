@@ -221,3 +221,37 @@ class IndexMotorCountSerializer(serializers.ModelSerializer):
         fields = ('name', 'stator', 'rotor', 'bearing')
 
 
+class PackDiagnosisSerializer(serializers.ModelSerializer):
+    result = serializers.SerializerMethodField()
+    time = serializers.DateTimeField(format='%Y-%m-%d %H:%M:%S')
+
+    def get_result(self, obj):
+        mean = [4.08730257e+01, 1.73987679e-01, 3.38665858e-02, 2.51566228e-02
+            , 1.38076468e-02, 8.69973561e-03, 8.03956150e-03, 5.46600118e-03
+            , 5.47209168e-03, 3.97664006e-03, 3.49551548e-03, 3.12332230e-03
+            , 2.89882393e-03, 2.59235078e-03, 2.44827813e-03, 2.21258332e-03
+            , 2.06736559e-03, 1.94553804e-03, 1.83568153e-03, 1.71402076e-03
+            , 1.63825834e-03, 1.92515618e-13, 1.71528731e+00, 1.87438023e+00
+            , 1.17415829e+00, 3.02615524e+00, 1.10859131e+00, 3.56888253e+00
+            , 1.40528613e+00, 3.43715517e+00, 1.35946774e+00]
+        var = [6.86443163e+01, 1.37727184e-04, 8.18211372e-05, 3.84386914e-05
+            , 2.45116228e-05, 1.15764157e-05, 1.53705260e-05, 6.06259742e-06
+            , 8.01371761e-06, 3.43112622e-06, 2.69436399e-06, 2.23925042e-06
+            , 1.89684885e-06, 1.54081806e-06, 1.34945087e-06, 1.15557906e-06
+            , 9.93618765e-07, 8.75660264e-07, 7.92424842e-07, 7.10468212e-07
+            , 6.40105019e-07, 2.29148844e-26, 1.43297362e+00, 1.06251902e+00
+            , 3.88808295e-01, 7.86609996e+00, 2.75726200e-01, 1.51483484e+01
+            , 6.90431391e-01, 1.44584506e+01, 4.40973639e-01]
+        data = np.concatenate(([obj.uphase.frequency, obj.ufeature.rms, obj.ufeature.thd],
+                               np.fromstring(obj.ufeature.harmonics), np.fromstring(obj.ufeature.fbrb)))
+
+        import pickle
+        f2 = open('./MLmodel/svm-rbf.txt', 'rb')
+        s2 = f2.read()
+        clf2 = pickle.loads(s2)
+        result = clf2.predict(np.reshape(((data - mean) / np.sqrt(var)), (1, -1)))
+        return int(result)
+
+    class Meta:
+        model = CurrentSignalPack
+        fields = "__all__"

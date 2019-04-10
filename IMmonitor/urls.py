@@ -14,12 +14,14 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.urls import path, include, re_path
+from django.conf.urls import url
 import xadmin
 from rest_framework.routers import DefaultRouter
 from dashboard.views import *
 from real_time.views import *
 from rest_framework.documentation import include_docs_urls
 from auth.views import LoginView, getUserInfo
+from motors.views import DiagnosisPackRetrieveViewSet
 from symmetry.views import PackListViewSet, DQPackListViewSet, FeatureThrendListViewSet, HarmonicsPackListViewSet, \
     EnvelopePackListViewSet
 
@@ -39,6 +41,9 @@ router.register(r'dqpacks', DQPackListViewSet, base_name='DQ transformation')
 router.register(r'feature-trend', FeatureThrendListViewSet, base_name='Feature Trend')
 router.register(r'harmonics', HarmonicsPackListViewSet, base_name='Harmonics')
 router.register(r'envelope', EnvelopePackListViewSet, base_name='Envelope')
+router.register(r'diagnosis', DiagnosisPackRetrieveViewSet, base_name='Diagnosis')
+
+
 urlpatterns = [
     path('ueditor/', include('DjangoUeditor.urls')),
     path('xadmin/', xadmin.site.urls),
@@ -49,5 +54,5 @@ urlpatterns = [
     path('login', LoginView.as_view(), name='Login'),
     path('user/info', getUserInfo.as_view(), name='User info'),
     path('index-calendar/', IndexWarningCalendarView.as_view(), name='Calendar'),
-    path('index-serverstatu/', IndexProgressBarView.as_view(), name='Table Statu')
+    path('index-serverstatu/', IndexProgressBarView.as_view(), name='Table Statu'),
 ]
