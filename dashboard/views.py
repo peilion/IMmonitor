@@ -9,6 +9,9 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from pandas import date_range
 import psutil
+from real_time.serializers import RealTimeMotorSerializer, MotorCardSerializer
+from rest_framework.decorators import action
+from symmetry.views import flatten
 
 
 class MotorsListViewSet(mixins.ListModelMixin, mixins.RetrieveModelMixin, mixins.UpdateModelMixin,
@@ -26,6 +29,29 @@ class MotorsListViewSet(mixins.ListModelMixin, mixins.RetrieveModelMixin, mixins
     filter_class = MotorsFilter
     search_fields = ('name', 'sn', 'statu')
     ordering_fields = ('name')
+
+    def get_serializer_class(self):
+        if self.action == 'real_time':
+            return RealTimeMotorSerializer
+        if self.action == 'card_view':
+            return MotorCardSerializer
+        else:
+            return MotorsSerializer
+
+    @action(methods=['get'], detail=True)
+    def real_time(self, request, pk=None):
+        instance = Motor.objects.get(id=pk)
+        serializer = self.get_serializer(instance)
+        return Response(serializer.data)
+
+    @action(methods=['get'], detail=False)
+    def card_view(self, request, pk=None):
+        queryset = Motor.objects.all().order_by('id')
+        serializer = self.get_serializer(queryset, many=True)
+        dic = []
+        for item in serializer.data:
+            dic.append(flatten(item))
+        return Response(dic)
 
 
 class RotorListViewSet(mixins.ListModelMixin, mixins.RetrieveModelMixin, mixins.UpdateModelMixin,
@@ -47,13 +73,14 @@ class StatorListViewSet(mixins.ListModelMixin, mixins.RetrieveModelMixin, mixins
 
 
 class WarningLogListViewSet(mixins.ListModelMixin, mixins.RetrieveModelMixin, viewsets.GenericViewSet):
-    queryset = WarningLog.objects.all().order_by('-id')
     serializer_class = WarningLogSerializer
     filter_backends = (DjangoFilterBackend,)
-
-    # 设置filter的类为我们自定义的类
-    # 过滤
     filter_class = WarninglogFilter
+
+    def get_queryset(self):
+        queryset = WarningLog.objects.all().order_by('-id')
+        queryset = self.get_serializer_class().setup_eager_loading(queryset)
+        return queryset
 
 
 class WeeklyRecordListViewSet(mixins.ListModelMixin, mixins.RetrieveModelMixin, viewsets.GenericViewSet):
@@ -95,8 +122,18 @@ class MotorStatusView(APIView):
 
 
 class DashBoardMotorFeatureViewset(mixins.ListModelMixin, mixins.RetrieveModelMixin, viewsets.GenericViewSet):
-    queryset = Motor.objects.all().order_by('id')
     serializer_class = DashBoardRadarFeatureSerializer
+
+    def get_queryset(self):
+        motors = Motor.objects.all().order_by('id')
+        # Set up eager loading to avoid N+1 selects
+        queryset = CurrentSignalPack.objects.none()
+        # queryset = self.get_serializer_class().setup_eager_loading(queryset)
+        for item in motors:
+            pk = item.packs.last().pk
+            queryset |= item.packs.filter(pk=pk)
+        queryset = self.get_serializer_class().setup_eager_loading(queryset)
+        return queryset
 
 
 class IndexMotorCountViewset(mixins.ListModelMixin, mixins.RetrieveModelMixin, viewsets.GenericViewSet):
@@ -127,5 +164,3 @@ class IndexProgressBarView(APIView):
                          'table_count': CurrentSignalPack.objects.count(),
                          'cpu_statu': psutil.cpu_percent(None),
                          'memory_statu': psutil.virtual_memory().percent})
-
-

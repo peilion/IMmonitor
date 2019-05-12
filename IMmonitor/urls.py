@@ -55,4 +55,6 @@ urlpatterns = [
     path('user/info', getUserInfo.as_view(), name='User info'),
     path('index-calendar/', IndexWarningCalendarView.as_view(), name='Calendar'),
     path('index-serverstatu/', IndexProgressBarView.as_view(), name='Table Statu'),
+    path('silk/', include('silk.urls', namespace='silk')),
+
 ]

@@ -4,6 +4,7 @@ from real_time.serializers import PhaseSerializer, fftransform
 import numpy as np
 from scipy import signal
 
+
 def dq0_transform(v_a, v_b, v_c):
     d = (np.sqrt(2 / 3) * v_a - (1 / (np.sqrt(6))) * v_b - (1 / (np.sqrt(6))) * v_c)
     q = ((1 / (np.sqrt(2))) * v_b - (1 / (np.sqrt(2))) * v_c)
@@ -133,31 +134,35 @@ class DQPackSerializer(serializers.ModelSerializer):
 class FeatureSerializer(serializers.ModelSerializer):
     class Meta:
         model = Ufeature
-        exclude = ('harmonics', 'fbrb', 'signal_pack')
+        exclude = ('id', 'harmonics', 'fbrb', 'signal_pack')
 
 
 class SymmetryFeatureSerializer(serializers.ModelSerializer):
     class Meta:
         model = SymComponent
-        exclude = ('signal_pack',)
+        exclude = ('signal_pack', 'n_sequence_rms', 'p_sequence_rms', 'z_sequence_rms', 'id')
 
 
 class TrendSerializer(serializers.ModelSerializer):
-    data = serializers.SerializerMethodField()
     time = serializers.DateTimeField(format='%Y-%m-%d %H:%M:%S')
+    ufeature = FeatureSerializer(many=False)
+    vfeature = FeatureSerializer(many=False)
+    wfeature = FeatureSerializer(many=False)
+    symcomp = SymmetryFeatureSerializer(many=False)
 
-    def get_data(self, obj):
-        tempDict = {}
-        for item, phase in zip([obj.ufeature, obj.vfeature, obj.wfeature], ['u', 'v', 'w']):
-            tempDict[phase + 'feature'] = FeatureSerializer(item, many=False,
-                                                            context={'request': self.context['request']}).data
-        tempDict['symfeature'] = SymmetryFeatureSerializer(obj.symcomponent, many=False,
-                                                           context={'request': self.context['request']}).data
-        return tempDict
+    @staticmethod
+    def setup_eager_loading(queryset):
+        """ Perform necessary eager loading of data. """
+        # select_related for "to-one" relationships
+        queryset = queryset.select_related('ufeature')
+        queryset = queryset.select_related('vfeature')
+        queryset = queryset.select_related('wfeature')
+        queryset = queryset.select_related('symcomp')
+        return queryset
 
     class Meta:
         model = CurrentSignalPack
-        fields = "__all__"
+        exclude = ('id', 'rpm', 'motor', 'sampling_rate')
 
 
 class HamonicsSerializer(serializers.ModelSerializer):

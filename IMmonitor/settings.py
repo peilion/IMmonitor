@@ -20,6 +20,7 @@ import sys
 sys.path.insert(0, BASE_DIR)
 sys.path.insert(0, os.path.join(BASE_DIR, 'extra_apps'))
 
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
 
@@ -50,11 +51,13 @@ INSTALLED_APPS = [
     'motors',
     'dashboard',
     'real_time',
+    'silk'
     # 'django_extensions'
 ]
 
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
+    'silk.middleware.SilkyMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -96,20 +99,20 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'immonitor',  # 数据库名字
         'USER': 'root',  # 账号
-        'PASSWORD': '',  # 密码
+        'PASSWORD': '8315814',  # 密码
         # 'HOST': '123.56.7.137',     #IP
         'HOST': '127.0.0.1',  # IP
         'PORT': '3306',  # 端口
         # 这里引擎用innodb（默认myisam）
         # 因为后面第三方登录时，要求引擎为INNODB
-        # 'OPTIONS':{'init_command': 'SET storage_engine=INNODB'},    #按照课程会报错，改为
+        # 'OPTIONS':{'init_command': 'SET storage_engine=INNODB'},
         "OPTIONS": {"init_command": "SET default_storage_engine=INNODB;"}
     },
     'tabinformation': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'information_schema',  # 数据库名字
         'USER': 'root',  # 账号
-        'PASSWORD': '',  # 密码
+        'PASSWORD': '8315814',  # 密码
         'HOST': '127.0.0.1',  # IP
         'PORT': '3306',  # 端口
     }

@@ -125,15 +125,18 @@ class phase(models.Model):
 
 
 class Uphase(phase):
-    pass
+    signal_pack = models.OneToOneField(CurrentSignalPack, verbose_name='Parent pack', on_delete=models.CASCADE,
+                                       related_name='uphase')
 
 
 class Vphase(phase):
-    pass
+    signal_pack = models.OneToOneField(CurrentSignalPack, verbose_name='Parent pack', on_delete=models.CASCADE,
+                                       related_name='vphase')
 
 
 class Wphase(phase):
-    pass
+    signal_pack = models.OneToOneField(CurrentSignalPack, verbose_name='Parent pack', on_delete=models.CASCADE,
+                                       related_name='wphase')
 
 
 class Feature(models.Model):
@@ -150,19 +153,23 @@ class Feature(models.Model):
 
 
 class Ufeature(Feature):
-    pass
+    signal_pack = models.OneToOneField(CurrentSignalPack, verbose_name='Parent pack', on_delete=models.CASCADE,
+                                       related_name='ufeature')
 
 
 class Vfeature(Feature):
-    pass
+    signal_pack = models.OneToOneField(CurrentSignalPack, verbose_name='Parent pack', on_delete=models.CASCADE,
+                                       related_name='vfeature')
 
 
 class Wfeature(Feature):
-    pass
+    signal_pack = models.OneToOneField(CurrentSignalPack, verbose_name='Parent pack', on_delete=models.CASCADE,
+                                       related_name='wfeature')
 
 
 class SymComponent(models.Model):  # Only one phase syscomponents are calculated and stored
-    signal_pack = models.OneToOneField(CurrentSignalPack, verbose_name='Parent pack', on_delete=models.CASCADE)
+    signal_pack = models.OneToOneField(CurrentSignalPack, verbose_name='Parent pack', on_delete=models.CASCADE,
+                                       related_name='symcomp')
     n_sequence_rms = models.FloatField('Negative sequence root-mean-square', default=0)
     p_sequence_rms = models.FloatField('Positive sequence root-mean-square', default=0)
     z_sequence_rms = models.FloatField('Zero sequence root-mean-square', default=0)

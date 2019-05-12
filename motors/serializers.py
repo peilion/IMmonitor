@@ -135,6 +135,13 @@ class WarningMotorSerializer(serializers.ModelSerializer):
 class WarningLogSerializer(serializers.ModelSerializer):
     motor = WarningMotorSerializer()
 
+    @staticmethod
+    def setup_eager_loading(queryset):
+        """ Perform necessary eager loading of data. """
+        # select_related for "to-one" relationships
+        queryset = queryset.select_related('motor')
+        return queryset
+
     class Meta:
         model = WarningLog
         fields = "__all__"
@@ -176,30 +183,51 @@ class MotorTrendSerializer(serializers.ModelSerializer):
         fields = ('name', 'statu', 'trend')
 
 
+class URMSSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Ufeature
+        fields = ('rms',)
+
+
+class VRMSSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Vfeature
+        fields = ('rms',)
+
+
+class WRMSSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Wfeature
+        fields = ('rms',)
+
+
+class SymFeatureSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = SymComponent
+        fields = ('n_sequence_rms', 'p_sequence_rms')
+
+
 class DashBoardRadarFeatureSerializer(serializers.ModelSerializer):
-    rmsfeatures = serializers.SerializerMethodField()
-    symfeatures = serializers.SerializerMethodField()
-    psf = serializers.SerializerMethodField()
+    ufeature = URMSSerializer(many=False)
+    vfeature = VRMSSerializer(many=False)
+    wfeature = WRMSSerializer(many=False)
+    symcomp = SymFeatureSerializer(many=False)
+    uphase = PSFserializer(many=False)
 
-    def get_rmsfeatures(self, obj):
-        return {'urms': obj.packs.last().ufeature.rms,
-                'vrms': obj.packs.last().vfeature.rms,
-                'wrms': obj.packs.last().wfeature.rms}
-
-    def get_symfeatures(self, obj):
-        return {
-            'ns': obj.packs.last().symcomponent.n_sequence_rms,
-            'ps': obj.packs.last().symcomponent.p_sequence_rms,
-        }
-
-    def get_psf(self, obj):
-        phase_object = obj.packs.last().uphase
-        trend_serializer = PSFserializer(phase_object, context={'request': self.context['request']})
-        return trend_serializer.data
+    @staticmethod
+    def setup_eager_loading(queryset):
+        """ Perform necessary eager loading of data. """
+        # select_related for "to-one" relationships
+        queryset = queryset.select_related('ufeature')
+        queryset = queryset.select_related('vfeature')
+        queryset = queryset.select_related('wfeature')
+        queryset = queryset.select_related('symcomp')
+        queryset = queryset.select_related('uphase')
+        return queryset
 
     class Meta:
-        model = Motor
-        fields = ('name', 'rmsfeatures', 'symfeatures', 'psf')
+        model = CurrentSignalPack
+        fields = ('ufeature', 'vfeature', 'wfeature', 'symcomp', 'uphase')
 
 
 class IndexMotorCountSerializer(serializers.ModelSerializer):
@@ -246,7 +274,7 @@ class PackDiagnosisSerializer(serializers.ModelSerializer):
                                np.fromstring(obj.ufeature.harmonics), np.fromstring(obj.ufeature.fbrb)))
 
         import pickle
-        f2 = open('./MLmodel/svm-rbf.txt', 'rb')
+        f2 = open('db_tools/MLmodel/svm-rbf.txt', 'rb')
         s2 = f2.read()
         clf2 = pickle.loads(s2)
         result = clf2.predict(np.reshape(((data - mean) / np.sqrt(var)), (1, -1)))

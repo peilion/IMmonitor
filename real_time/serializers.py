@@ -1,5 +1,5 @@
 import numpy as np
-from motors.models import Motor, CurrentSignalPack, Uphase, Ufeature
+from motors.models import Motor, CurrentSignalPack, Uphase, Ufeature, SymComponent
 from rest_framework import serializers
 
 
@@ -85,3 +85,40 @@ class RealTimeMotorSerializer(serializers.ModelSerializer):
     class Meta:
         model = Motor
         fields = ('name', 'threephase', 'pack', 'feature')
+
+
+class MotorCardPackSerializer(serializers.ModelSerializer):
+    class SymFeatureSerializer(serializers.ModelSerializer):
+        class Meta:
+            model = SymComponent
+            fields = ('imbalance',)
+
+    class FeatureSerializer(serializers.ModelSerializer):
+        class Meta:
+            model = Ufeature
+            fields = ('thd',)
+
+    class PhaseSerializer(serializers.ModelSerializer):
+        class Meta:
+            model = Uphase
+            fields = ('amplitude', 'frequency')
+
+    ufeature = FeatureSerializer(many=False)
+    symcomp = SymFeatureSerializer(many=False)
+    uphase = PhaseSerializer(many=False)
+
+    class Meta:
+        model = CurrentSignalPack
+        fields = ('ufeature','symcomp', 'uphase')
+
+
+class MotorCardSerializer(serializers.ModelSerializer):
+    latest = serializers.SerializerMethodField()
+
+    def get_latest(self, obj):
+        pack = obj.packs.last()
+        return MotorCardPackSerializer(pack, many=False).data
+
+    class Meta:
+        model = Motor
+        fields = ('name', 'sn', 'health_indicator', 'latest')
