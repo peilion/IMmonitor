@@ -26,7 +26,7 @@ idna==2.8
 itypes==1.1.0
 jdcal==1.4
 Jinja2==2.10
-joblib==0.13.2
+joblib==1.2.0
 kiwisolver==1.0.1
 Markdown==3.0.1
 MarkupSafe==1.1.1
